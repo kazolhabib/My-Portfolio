@@ -125,41 +125,60 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Card 2: Classical Arched Portrait (Col span 4, Row span 3) */}
+          {/* Card 2: Premium Squircle Photo Deck with HUD Brackets (Col span 4, Row span 2) */}
           <div className="md:col-span-4 md:row-span-2 p-8 bento-card flex flex-col items-center justify-center min-h-[400px]">
             <motion.div
               style={{ rotateX: springRotateX, rotateY: springRotateY, transformStyle: "preserve-3d" }}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
-              className="relative cursor-pointer w-[200px] h-[270px] sm:w-[230px] sm:h-[310px] group transition-all duration-300"
+              className="relative cursor-pointer w-[210px] h-[280px] sm:w-[240px] sm:h-[320px] group transition-all duration-300"
             >
-              {/* Cathedral Arch Mask Container */}
+              {/* Backing structural glowing border rotated slightly */}
+              <div
+                style={{ transform: "translateZ(-15px)" }}
+                className="absolute inset-0 rounded-[32px] border-2 border-dashed border-primary/20 pointer-events-none -rotate-3 group-hover:rotate-3 group-hover:border-primary/45 transition-transform duration-700 ease-out"
+              />
+
+              {/* Minimal Tech HUD Corner Brackets */}
+              {/* Top-Left Bracket */}
+              <div className="absolute -top-3 -left-3 w-5 h-5 border-t-2 border-l-2 border-primary/30 group-hover:border-primary group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all duration-500 ease-out rounded-tl-md" />
+              {/* Top-Right Bracket */}
+              <div className="absolute -top-3 -right-3 w-5 h-5 border-t-2 border-r-2 border-primary/30 group-hover:border-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500 ease-out rounded-tr-md" />
+              {/* Bottom-Left Bracket */}
+              <div className="absolute -bottom-3 -left-3 w-5 h-5 border-b-2 border-l-2 border-primary/30 group-hover:border-primary group-hover:-translate-x-1 group-hover:translate-y-1 transition-all duration-500 ease-out rounded-bl-md" />
+              {/* Bottom-Right Bracket */}
+              <div className="absolute -bottom-3 -right-3 w-5 h-5 border-b-2 border-r-2 border-primary/30 group-hover:border-primary group-hover:translate-x-1 group-hover:translate-y-1 transition-all duration-500 ease-out rounded-br-md" />
+
+              {/* Main Image Deck Container */}
               <div
                 style={{ transform: "translateZ(20px)" }}
-                className="absolute inset-0 overflow-hidden rounded-t-full border border-border-color p-2 hover:border-primary transition-colors duration-500 bg-background/50 shadow-lg"
+                className="absolute inset-0 overflow-hidden rounded-[32px] border border-border-color p-2 hover:border-primary transition-colors duration-500 bg-background/50 shadow-lg"
               >
-                <div className="relative w-full h-full rounded-t-full overflow-hidden border-2 border-primary/20 group-hover:border-primary/50 transition-colors duration-500">
+                <div className="relative w-full h-full rounded-[24px] overflow-hidden border-2 border-primary/10 group-hover:border-primary/40 transition-colors duration-500">
                   <Image
                     src="/kazol-habib-v2.png"
                     alt="Kazol Habib"
                     fill
                     priority
-                    sizes="(max-width: 768px) 200px, 230px"
+                    sizes="(max-width: 768px) 210px, 240px"
                     className="object-cover object-center scale-102 group-hover:scale-106 transition-transform duration-700 ease-out"
                   />
-                  {/* Subtle luxurious shadow mask */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
+                  {/* Subtle luxurious shadow gradient mask */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
                 </div>
               </div>
 
-              {/* Backing structural glowing arch contour */}
+              {/* Floating "Available for Hire" status tag overlay */}
               <div
-                style={{ transform: "translateZ(-15px)" }}
-                className="absolute inset-[-6px] rounded-t-full border-2 border-dashed border-primary/10 pointer-events-none group-hover:rotate-6 transition-transform duration-700 ease-out"
-              />
+                style={{ transform: "translateZ(35px)" }}
+                className="absolute -bottom-2 -right-2 px-3 py-1.5 rounded-xl bg-card-bg/90 backdrop-blur-md border border-border-color group-hover:border-primary flex items-center space-x-1.5 shadow-md shadow-black/5 transition-all duration-350 select-none"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[10px] font-bold tracking-wider text-foreground/80">AVAILABLE FOR HIRE</span>
+              </div>
             </motion.div>
             
-            <div className="text-center mt-6">
+            <div className="text-center mt-8">
               <p className="text-xs font-bold text-primary tracking-widest uppercase">Based in Bangladesh</p>
               <p className="text-xs text-foreground/50 mt-1">Available worldwide</p>
             </div>

@@ -12,7 +12,7 @@ This website represents the absolute pinnacle of modern UI/UX engineering, utili
 *   **Luxury Emerald & Mint Theme**: Overhauled with deep, rich forest emerald and mint green highlights:
     *   *Light Mode*: Classic Warm Ivory/Cream (`#FDFDFB`) canvas accented with Premium Forest Emerald (`#059669`).
     *   *Dark Mode*: High-End Graphite Black (`#0A0A0C`) canvas accented with Vivid Emerald Mint (`#10B981`).
-*   **Cathedral Arch 3D Headshot Viewport**: Highlights Kazol's professional black-and-white portrait framed inside a classical arched mask (`rounded-t-full`) with emerald/mint outlines that tilt dynamically in 3D using spring-based cursor coordinates.
+*   **Interactive Squircle HUD Portrait Deck**: Highlights Kazol's professional black-and-white portrait framed inside a premium rounded squircle (`rounded-[32px]`) with micro-tech corner L-brackets, offset structural rotations, and a floating availability status badge that tilt dynamically in 3D using spring-based cursor coordinates.
 *   **Ambient Emerald Radial Wash**: Subtle radial gradient overlay washes stay locked (`fixed`) on the body, smoothly casting a glowing cosmic emerald/mint aura when scrolling or switching themes.
 
 ---
