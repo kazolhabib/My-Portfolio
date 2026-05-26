@@ -21,17 +21,17 @@ This website represents the absolute pinnacle of modern UI/UX engineering, utili
 
 The project is structured into three highly modular and optimized developmental phases:
 
-### 🚀 Part 1: Bounded Structural Deck
+### Part 1: Bounded Structural Deck
 *   **Editorial Bordered Header**: Centered navbar locked at `1440px` with a thin bottom border, custom micro-link lines, and an animated Sun/Moon rotating toggler (`AnimatePresence`).
 *   **Mobile Slide-Down Menu**: Dynamic hamburger toggle that staggered-animates links downwards inside a blur overlay.
 
-### 🚀 Part 2: Interactive Story & Skills Bento
+### Part 2: Interactive Story & Skills Bento
 *   **Editorial Story**: Tells Kazol's professional progression, starting as a Webflow Expert (mastering complex responsive CMS systems and animations) and transitioning to an elite React & Next.js Frontend Engineer.
 *   **Personality Bento Box**: Houses an interactive hobby card ("🎨 Painting & Digital Art") showing how visual arts inform composition layouts in code, alongside quick stat counters.
 *   **4-Card Skills Bento**: Groups capabilities (Frontend, UI Systems, Backend, No-Code Power) in cards that raise dynamically toward the cursor via spring-physics 3D hover-lifts. Includes custom emerald/mint outline grid badges.
 *   **Sleek Education & Experience Timeline**: Vertical timeline track connecting milestones (BSS degree user-persona modeling, Webflow CMS Specialist, React Engineer) with emerald/mint nodes and delayed scroll entrances.
 
-### 🚀 Part 3: Selected Works & Dynamic SSG Pages
+### Part 3: Selected Works & Dynamic SSG Pages
 *   **Bento Projects Grid**: Responsive 3-column bento card grid of premium builds with custom browser mock overlays and zoom transitions.
 *   **Dynamic SSG Project Subpages (`/projects/[id]`)**: Next.js Server Components dynamically resolving parameter promises via `await params` in Next 16 specs. Uses `generateStaticParams()` to statically pre-render all details pages at compile-time (Zero-latency loads!). Shows challenges, future roadmaps, and preview CTAs.
 *   **Executive Contact & Footer**: Split-column contact dock with direct email/phone anchors and a pulsing **WhatsApp quick-connect** button on hover.

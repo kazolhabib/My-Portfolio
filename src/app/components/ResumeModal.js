@@ -1,11 +1,11 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ExternalLink, FileText } from "lucide-react";
-import { Button } from "@heroui/react";
+import { X, ExternalLink, FileText, Download } from "lucide-react";
 
 export default function ResumeModal({ isOpen, onClose }) {
   const resumeUrl = "https://drive.google.com/file/d/1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv/view?usp=drive_link";
+  const downloadUrl = "https://drive.google.com/uc?export=download&id=1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv";
   const embedUrl = "https://drive.google.com/file/d/1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv/preview";
 
   return (
@@ -43,21 +43,19 @@ export default function ResumeModal({ isOpen, onClose }) {
 
               {/* Action Buttons */}
               <div className="flex items-center space-x-2">
-                <Button
-                  as="a"
+                <a
                   href={resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  variant="light"
-                  className="hidden sm:flex font-semibold text-xs text-foreground/75 hover:text-primary rounded-xl px-3 h-9 min-w-0 flex-row items-center space-x-1 border border-transparent hover:border-border-color cursor-pointer"
+                  className="hidden sm:flex items-center space-x-1.5 font-bold text-xs text-foreground/80 hover:text-primary bg-neutral-100/60 dark:bg-neutral-900/60 hover:bg-primary/5 dark:hover:bg-primary/10 border border-border-color hover:border-primary rounded-xl px-4 py-2 transition-all duration-200 cursor-pointer"
                 >
                   <ExternalLink className="h-3.5 w-3.5" />
                   <span>Open Drive</span>
-                </Button>
+                </a>
                 
                 <button
                   onClick={onClose}
-                  className="p-1.5 rounded-xl border border-border-color hover:border-primary text-foreground/60 hover:text-primary transition-all duration-200 cursor-pointer w-9 h-9 flex items-center justify-center"
+                  className="p-1.5 rounded-xl border border-border-color hover:border-primary text-foreground/60 hover:text-primary transition-all duration-200 cursor-pointer w-9 h-9 flex items-center justify-center bg-neutral-100/60 dark:bg-neutral-900/60 hover:bg-primary/5 dark:hover:bg-primary/10"
                   aria-label="Close Modal"
                 >
                   <X className="h-4.5 w-4.5" />
@@ -82,15 +80,15 @@ export default function ResumeModal({ isOpen, onClose }) {
               </p>
               
               <div className="flex items-center space-x-2">
-                <Button
-                  as="a"
-                  href={resumeUrl}
+                <a
+                  href={downloadUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-bold text-xs bg-primary text-primary-foreground rounded-xl px-5 h-9 cursor-pointer"
+                  className="flex items-center space-x-1.5 font-bold text-xs bg-primary text-primary-foreground hover:scale-[1.02] active:scale-[0.98] rounded-xl px-5 py-2.5 shadow-md shadow-primary/10 hover:shadow-primary/20 transition-all duration-200 cursor-pointer"
                 >
-                  Download PDF
-                </Button>
+                  <Download className="h-3.5 w-3.5" />
+                  <span>Download PDF</span>
+                </a>
               </div>
             </div>
 
