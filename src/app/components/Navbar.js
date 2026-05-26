@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon, Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@heroui/react";
+import { useResumeModal } from "../providers";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
@@ -15,6 +16,7 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
+  const { openResume } = useResumeModal();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -98,6 +100,10 @@ export default function Navbar() {
               href="https://drive.google.com/file/d/1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                openResume();
+              }}
               variant="bordered"
               className="font-bold border-border-color text-foreground hover:border-primary rounded-xl px-5 hover:bg-primary/5 cursor-pointer transition-all duration-350"
             >
@@ -168,6 +174,11 @@ export default function Navbar() {
                   href="https://drive.google.com/file/d/1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsOpen(false);
+                    openResume();
+                  }}
                   className="w-full font-bold bg-primary text-primary-foreground rounded-xl flex items-center justify-center space-x-2"
                 >
                   <span>View Resume</span>

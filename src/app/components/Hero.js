@@ -5,6 +5,7 @@ import { Download, ArrowUpRight } from "lucide-react";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useResumeModal } from "../providers";
 
 // Modern custom inline brand SVGs
 const GithubIcon = (props) => (
@@ -51,6 +52,7 @@ const TECH_TAGS = [
 ];
 
 export default function Hero() {
+  const { openResume } = useResumeModal();
   const [typedText, setTypedText] = useState("");
   const fullText = "Frontend Developer & Webflow Expert";
 
@@ -225,6 +227,10 @@ export default function Hero() {
                 href="https://drive.google.com/file/d/1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openResume();
+                }}
                 className="group w-full font-bold bg-primary text-primary-foreground rounded-xl py-5.5 hover:scale-102 transition-transform duration-350 shadow-md shadow-primary/10 flex items-center justify-center space-x-2 cursor-pointer"
               >
                 <span>Resume</span>
