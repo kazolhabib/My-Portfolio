@@ -40,7 +40,12 @@ const TECH_TAGS = [
   "Tailwind v4",
   "Webflow",
   "TypeScript",
-  "UI/UX Arch",
+  "Framer Motion",
+  "Better Auth",
+  "Node.js",
+  "MongoDB",
+  "Figma to Code",
+  "Core Web Vitals",
 ];
 
 export default function Hero() {
