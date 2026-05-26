@@ -1,26 +1,93 @@
 @import "tailwindcss";
+@import "@heroui/styles";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@source "../../node_modules/@heroui/react/dist/**/*.{js,ts,jsx,tsx}";
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-card-bg: var(--card-bg);
+  --color-border-color: var(--border-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Swiss Warm Ivory Cream Theme with Royal Blue Accent */
+  --background: #FDFDFB;
+  --foreground: #111115;
+  --primary: #1D4ED8; /* Royal Blue */
+  --primary-foreground: #FDFDFB;
+  --card-bg: #FFFFFF;
+  --border-color: #E6E6EB;
+}
+
+.dark {
+  /* High-End Graphite Black Theme with Sapphire Blue Accent */
+  --background: #0A0A0C;
+  --foreground: #F3F4F6;
+  --primary: #3B82F6; /* Sapphire Blue */
+  --primary-foreground: #0A0A0C;
+  --card-bg: #121215;
+  --border-color: #1F1F24;
+}
+
+@layer base {
+  /* Global dark/light background definitions with beautiful radial blue gradient overlays */
+  body {
+    background-color: var(--background);
+    background-image: 
+      radial-gradient(circle at 0% 0%, rgba(29, 78, 216, 0.035) 0%, transparent 55%), 
+      radial-gradient(circle at 100% 100%, rgba(29, 78, 216, 0.02) 0%, transparent 55%);
+    background-attachment: fixed;
+    color: var(--foreground);
+    font-family: var(--font-geist-sans), sans-serif;
+    overflow-x: hidden;
+  }
+
+  .dark body {
+    background-image: 
+      radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.06) 0%, transparent 60%), 
+      radial-gradient(circle at 100% 100%, rgba(30, 64, 175, 0.04) 0%, transparent 60%);
+  }
+
+  /* Editorial-grade smooth transitions */
+  html, body, header, nav, main, footer, div, section, p, h1, h2, h3, h4, h5, h6, span, button, a {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    transition-duration: 400ms;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Premium Bento Grid Card Styles */
+.bento-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.015);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.035);
+}
+
+.dark .bento-card {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+.dark .bento-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+}
+
+/* Micro-accents for luxury layout */
+.accent-border {
+  border: 1px solid rgba(29, 78, 216, 0.15);
+}
+
+.dark .accent-border {
+  border: 1px solid rgba(59, 130, 246, 0.15);
 }
