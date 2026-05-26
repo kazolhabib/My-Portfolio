@@ -38,14 +38,15 @@ const TECH_TAGS = [
   "Next.js 16",
   "React 19",
   "Tailwind v4",
-  "Webflow",
   "TypeScript",
-  "Framer Motion",
+  "JavaScript ES6+",
+  "Webflow CMS",
+  "Interactions",
+  "Figma",
+  "Express.js",
   "Better Auth",
-  "Node.js",
   "MongoDB",
-  "Figma to Code",
-  "Core Web Vitals",
+  "SEO Optimization",
 ];
 
 export default function Hero() {
