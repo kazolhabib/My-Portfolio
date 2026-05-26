@@ -51,9 +51,11 @@ export default function Hero() {
   useEffect(() => {
     let index = 0;
     const intervalId = setInterval(() => {
-      setTypedText((prev) => prev + fullText.charAt(index));
-      index++;
-      if (index >= fullText.length) {
+      if (index < fullText.length) {
+        const nextChar = fullText.charAt(index);
+        setTypedText((prev) => prev + nextChar);
+        index++;
+      } else {
         clearInterval(intervalId);
       }
     }, 60);
