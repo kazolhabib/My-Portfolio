@@ -95,7 +95,9 @@ export default function Navbar() {
             {/* Resume Button */}
             <Button
               as="a"
-              href="#resume"
+              href="https://drive.google.com/file/d/1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
               variant="bordered"
               className="font-bold border-border-color text-foreground hover:border-primary rounded-xl px-5 hover:bg-primary/5 cursor-pointer transition-all duration-350"
             >
@@ -163,7 +165,9 @@ export default function Navbar() {
               >
                 <Button
                   as="a"
-                  href="#resume"
+                  href="https://drive.google.com/file/d/1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full font-bold bg-primary text-primary-foreground rounded-xl flex items-center justify-center space-x-2"
                 >
                   <span>View Resume</span>

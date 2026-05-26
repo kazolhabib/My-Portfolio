@@ -35,17 +35,18 @@ const FacebookIcon = (props) => (
 );
 
 const TECH_TAGS = [
-  "Next.js 16",
-  "React 19",
-  "Tailwind v4",
+  "Next.JS",
+  "React.JS",
+  "Tailwind CSS",
   "TypeScript",
   "JavaScript ES6+",
+  "Webflow",
   "Webflow CMS",
   "Interactions",
-  "Figma",
-  "Express.js",
+  "Express.JS",
   "Better Auth",
   "MongoDB",
+  "Framer Motion",
   "SEO Optimization",
 ];
 
@@ -98,10 +99,10 @@ export default function Hero() {
   return (
     <section className="relative w-full py-12 md:py-20 px-6 sm:px-8 lg:px-12 bg-transparent transition-colors duration-350">
       <div className="mx-auto max-w-[1440px] w-full">
-        
+
         {/* Bento Grid Layout locked strictly at max-w-1440px */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-auto">
-          
+
           {/* Card 1: Intro Deck (Col span 8, Row span 2) */}
           <div className="md:col-span-8 p-8 md:p-12 bento-card flex flex-col justify-between min-h-[340px]">
             <div className="space-y-6">
@@ -185,7 +186,7 @@ export default function Hero() {
                 <span className="text-[10px] font-bold tracking-wider text-foreground/80">AVAILABLE FOR HIRE</span>
               </div>
             </motion.div>
-            
+
             <div className="text-center mt-8">
               <p className="text-xs font-bold text-primary tracking-widest uppercase">Based in Bangladesh</p>
               <p className="text-xs text-foreground/50 mt-1">Available worldwide</p>
@@ -198,7 +199,7 @@ export default function Hero() {
               <h3 className="text-sm font-bold text-foreground/60 uppercase tracking-widest">Capabilities</h3>
               <p className="text-xs text-foreground/45 mt-0.5">Stack & Specialities</p>
             </div>
-            
+
             <div className="flex flex-wrap gap-2 mt-4">
               {TECH_TAGS.map((tag) => (
                 <span
@@ -221,7 +222,9 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-center gap-3 mt-6">
               <Button
                 as="a"
-                href="#resume"
+                href="https://drive.google.com/file/d/1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group w-full font-bold bg-primary text-primary-foreground rounded-xl py-5.5 hover:scale-102 transition-transform duration-350 shadow-md shadow-primary/10 flex items-center justify-center space-x-2 cursor-pointer"
               >
                 <span>Resume</span>
