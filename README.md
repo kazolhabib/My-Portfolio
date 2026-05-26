@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ✦ Kazol Habib | Next-Gen Frontend Architect
 
-## Getting Started
+A premium, highly-custom, and visually breathtaking personal portfolio built with **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS v4**, **HeroUI v3**, and **Framer Motion**. Designed as an uncommon **Bento Grid Editorial Layout** strictly locked at a maximum desktop grid of `1440px`.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✦ Design Aesthetics & Uncommon Visuals
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This website represents the absolute pinnacle of modern UI/UX engineering, utilizing a luxury Swiss-watch architectural visual system:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+*   **1440px Max Width Boundary**: The entire layout (header, hero, grids, and subpages) is strictly framed inside a `max-w-[1440px] mx-auto` container, delivering a clean desktop editorial frame.
+*   **Luxury Royal & Sapphire Blue Theme**: Overhauled with deep, rich sapphire and royal blue highlights:
+    *   *Light Mode*: Classic Warm Ivory/Cream (`#FDFDFB`) canvas accented with Royal Blue (`#1D4ED8`).
+    *   *Dark Mode*: High-End Graphite Black (`#0A0A0C`) canvas accented with Sapphire Blue (`#3B82F6`).
+*   **Cathedral Arch 3D Headshot Viewport**: Highlights Kazol's professional black-and-white portrait framed inside a classical arched mask (`rounded-t-full`) with gold/blue outlines that tilt dynamically in 3D using spring-based cursor coordinates.
+*   **Ambient Blue Radial Wash**: Subtle radial gradient overlay washes stay locked (`fixed`) on the body, smoothly casting a glowing cosmic blue aura when scrolling or switching themes.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✦ Core Features & Code Milestones
 
-To learn more about Next.js, take a look at the following resources:
+The project is structured into three highly modular and optimized developmental phases:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🚀 Part 1: Bounded Structural Deck
+*   **Editorial Bordered Header**: Centered navbar locked at `1440px` with a thin bottom border, custom micro-link lines, and an animated Sun/Moon rotating toggler (`AnimatePresence`).
+*   **Mobile Slide-Down Menu**: Dynamic hamburger toggle that staggered-animates links downwards inside a blur overlay.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🚀 Part 2: Interactive Story & Skills Bento
+*   **Editorial Story**: Tells Kazol's professional progression, starting as a Webflow Expert (mastering complex responsive CMS systems and animations) and transitioning to an elite React & Next.js Frontend Engineer.
+*   **Personality Bento Box**: Houses an interactive hobby card ("🎨 Painting & Digital Art") showing how visual arts inform composition layouts in code, alongside quick stat counters.
+*   **4-Card Skills Bento**: Groups capabilities (Frontend, UI Systems, Backend, No-Code Power) in cards that raise dynamically toward the cursor via spring-physics 3D hover-lifts. Includes custom gold/blue outline grid badges.
+*   **Sleek Education & Experience Timeline**: Vertical timeline track connecting milestones (BSS degree user-persona modeling, Webflow CMS Specialist, React Engineer) with gold nodes and delayed scroll entrances.
 
-## Deploy on Vercel
+### 🚀 Part 3: Selected Works & Dynamic SSG Pages
+*   **Bento Projects Grid**: Responsive 3-column bento card grid of premium builds with custom browser mock overlays and zoom transitions.
+*   **Dynamic SSG Project Subpages (`/projects/[id]`)**: Next.js Server Components dynamically resolving parameter promises via `await params` in Next 16 specs. Uses `generateStaticParams()` to statically pre-render all details pages at compile-time (Zero-latency loads!). Shows challenges, future roadmaps, and preview CTAs.
+*   **Executive Contact & Footer**: Split-column contact dock with direct email/phone anchors and a pulsing blue **WhatsApp quick-connect** button on hover.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ✦ Technical Architecture Stack
+
+| Layer | Technology | Key Highlights |
+| :--- | :--- | :--- |
+| **Framework** | **Next.js 16.2.6** | App Router, Static Site Generation (SSG), Turbopack optimized compiling. |
+| **Core** | **React 19.2.4** | Server Components, React Compiler enabled for automated memorization. |
+| **Styling** | **Tailwind CSS v4.0** | CSS-first variables, pure custom `@theme` tokens, `@source` node_modules scanning. |
+| **UI Library** | **HeroUI v3.1.0** | Highly optimized vanilla React components with no-provider required architectures. |
+| **Animation** | **Framer Motion** | Damped spring-tilt vectors, layout transitions, staggered keyframes. |
+| **Theme** | **next-themes** | SSR-safe theme toggles, patched in `providers.js` to suppress React 19 hydration logs. |
+
+---
