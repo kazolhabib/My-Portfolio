@@ -42,8 +42,8 @@ export default function Projects() {
               <div className="space-y-5">
                 {/* Clean Blueprint/Mockup Graphic Overlay */}
                 <div className="w-full h-44 rounded-xl relative overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-border-color/60 flex items-center justify-center">
-                  {/* Subtle vector grid and blue glow */}
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(29,78,216,0.06),transparent_100%)] dark:bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(59,130,246,0.08),transparent_100%)] pointer-events-none" />
+                  {/* Subtle vector grid and emerald/mint glow */}
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(5,150,105,0.06),transparent_100%)] dark:bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(16,185,129,0.08),transparent_100%)] pointer-events-none" />
                   
                   {/* Minimal tech window mock */}
                   <div className="w-[80%] h-[75%] rounded-lg border border-border-color bg-card-bg shadow-md p-3 space-y-2 flex flex-col justify-between group-hover:scale-103 transition-transform duration-500">

@@ -10,7 +10,7 @@ export const PROJECTS = [
     improvements: "Plan to integrate AI-powered predictive accounting algorithms and transition to WebSockets for sub-millisecond real-time analytical chart updates.",
     live: "https://zenith-demo.kazol.dev",
     github: "https://github.com/kazolhabib/zenith-erp",
-    image: "/kazol-habib.png" // We can reuse the cleaned user headshot or fallback style
+    image: "/kazol-habib-v2.png" // We can reuse the cleaned user headshot or fallback style
   },
   {
     id: "aura-shop",
@@ -23,7 +23,7 @@ export const PROJECTS = [
     improvements: "Plan to implement a multi-tenant merchant dashboard and support localized multi-currency conversion hooks.",
     live: "https://aura-shop.kazol.dev",
     github: "https://github.com/kazolhabib/aura-ecommerce",
-    image: "/kazol-habib.png"
+    image: "/kazol-habib-v2.png"
   },
   {
     id: "chronos-landing",
@@ -36,6 +36,6 @@ export const PROJECTS = [
     improvements: "Plan to optimize assets through fully automated compression scripts and integrate headless CMS connections.",
     live: "https://chronos-agency.kazol.dev",
     github: "https://github.com/kazolhabib/chronos-landing",
-    image: "/kazol-habib.png"
+    image: "/kazol-habib-v2.png"
   }
 ];
