@@ -6,7 +6,7 @@ import { Briefcase, Calendar, GraduationCap } from "lucide-react";
 const TIMELINE_ITEMS = [
   {
     type: "work",
-    date: "2024 - Present",
+    date: "2025 - Present",
     title: "React & Next.js Frontend Engineer",
     subtitle: "Enterprise Applications & Open Source",
     description: "Developing dynamic, server-side rendered application suites. Specializing in state optimization, custom React hooks, Core Web Vitals speed tuning, and high-fidelity custom animation frameworks.",
@@ -14,7 +14,7 @@ const TIMELINE_ITEMS = [
   },
   {
     type: "work",
-    date: "2021 - 2024",
+    date: "2021 - 2026",
     title: "Webflow Specialist & Designer",
     subtitle: "Freelance & Premium Digital Agencies",
     description: "Built pixel-perfect, high-performance visual solutions. Designed complex Webflow CMS structures, tailored custom interactions, and led user experience testing loops.",
@@ -22,7 +22,7 @@ const TIMELINE_ITEMS = [
   },
   {
     type: "education",
-    date: "2020 - 2024",
+    date: "2018 - 2020",
     title: "Bachelor of Social Science (BSS)",
     subtitle: "Academic Foundation",
     description: "Studied advanced research methodologies, socio-critical analyses, and human behavioral structures. Directly applied this systemic thinking to UX user-persona modeling, semantic content structures, and clear visual hierarchies.",
@@ -34,7 +34,7 @@ export default function Timeline() {
   return (
     <section id="timeline" className="relative w-full py-16 md:py-24 px-6 sm:px-8 lg:px-12 bg-transparent border-t border-border-color transition-colors duration-350">
       <div className="mx-auto max-w-[1440px] w-full">
-        
+
         {/* Section Header */}
         <div className="flex flex-col space-y-3 mb-16">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-primary/5 border border-primary/20 accent-border max-w-fit">
@@ -53,7 +53,7 @@ export default function Timeline() {
 
         {/* Sleek Vertical Timeline */}
         <div className="relative border-l border-border-color dark:border-border-color/80 ml-4 md:ml-8 space-y-12">
-          
+
           {TIMELINE_ITEMS.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -72,7 +72,7 @@ export default function Timeline() {
 
                 {/* Content Block */}
                 <div className="bento-card p-6 md:p-8 space-y-4">
-                  
+
                   {/* Meta Details */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                     <span className="inline-block text-[11px] font-bold text-primary px-2.5 py-1 rounded-md bg-primary/5 border border-primary/10 max-w-fit">

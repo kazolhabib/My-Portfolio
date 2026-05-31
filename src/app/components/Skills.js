@@ -14,19 +14,19 @@ const SKILL_GROUPS = [
     title: "UI Systems",
     description: "Designing components for speed and consistent styles.",
     icon: Layers,
-    skills: ["Hero UI", "Daisy UI"],
+    skills: ["Shadcn UI", "Hero UI", "Daisy UI", "Radix UI", "Headless UI"],
   },
   {
     title: "Backend & Database",
     description: "Building relational architectures and safe authorization hooks.",
     icon: ShieldCheck,
-    skills: ["Node.js", "MongoDB", "Better Auth"],
+    skills: ["Node.js", "MongoDB", "Better Auth", "Express.js"],
   },
   {
     title: "No-Code Power",
     description: "Structuring pixel-perfect, lightning-fast CMS designs.",
     icon: Compass,
-    skills: ["Webflow Expert", "CMS Architecture"],
+    skills: ["Webflow Expert", "CMS", "Interactions", "CMS Architecture"],
   },
 ];
 

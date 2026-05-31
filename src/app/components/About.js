@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section id="about" className="relative w-full py-16 md:py-24 px-6 sm:px-8 lg:px-12 bg-transparent border-t border-border-color transition-colors duration-350">
       <div className="mx-auto max-w-[1440px] w-full">
-        
+
         {/* Section Header */}
         <div className="flex flex-col space-y-3 mb-12">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-primary/5 border border-primary/20 accent-border max-w-fit">
@@ -23,7 +23,7 @@ export default function About() {
 
         {/* Bento/Editorial Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-          
+
           {/* Left Block: The Story (Col span 7) */}
           <div className="md:col-span-7 p-8 md:p-10 bento-card flex flex-col justify-between">
             <div className="space-y-6">
@@ -49,13 +49,13 @@ export default function About() {
 
             <div className="pt-6 border-t border-border-color mt-6 flex items-center space-x-3 text-foreground/50 text-xs">
               <Code className="h-4 w-4 text-primary" />
-              <span>React 19 • Next.js 16 • Tailwind CSS v4 • Webflow CMS</span>
+              <span>React Js • Next.Js 16 • Tailwind CSS v4 • Webflow CMS • Framer Motion</span>
             </div>
           </div>
 
           {/* Right Block: Bento Personality Deck (Col span 5) */}
           <div className="md:col-span-5 flex flex-col gap-6">
-            
+
             {/* Card A: Hobby Box (🎨 Digital Art) */}
             <div className="p-8 bento-card flex flex-col justify-between flex-grow relative overflow-hidden group">
               {/* Subtle background colored blur */}
@@ -66,21 +66,21 @@ export default function About() {
                   <Palette className="h-5 w-5" />
                   <h3 className="text-lg font-bold tracking-tight">Creative Balance</h3>
                 </div>
-                
+
                 <p className="text-xs sm:text-sm text-foreground/75 leading-relaxed">
                   <strong>Digital Art & Composition:</strong> Before lines of code, there were strokes of paint. Creating digital artwork helps me understand negative space, visual alignment, and colour balance—concepts I apply directly to the interfaces I engineer.
                 </p>
               </div>
 
               <div className="text-xs text-primary font-bold tracking-widest uppercase mt-6 z-10">
-                🎨 Art & Interfaces
+                Art & Interfaces
               </div>
             </div>
 
             {/* Card B: Quick Stats Grid */}
             <div className="p-8 bento-card grid grid-cols-2 gap-4">
               <div className="space-y-1 p-4 rounded-xl bg-neutral-100/50 dark:bg-neutral-900/50 border border-border-color">
-                <span className="text-2xl sm:text-3xl font-extrabold text-primary">50+</span>
+                <span className="text-2xl sm:text-3xl font-extrabold text-primary">15+</span>
                 <p className="text-[10px] sm:text-xs font-bold text-foreground/50 uppercase tracking-wider">
                   Projects Complete
                 </p>

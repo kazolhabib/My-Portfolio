@@ -1,12 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FolderGit2, ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { Button } from "@heroui/react";
+import Image from "next/image";
 import { PROJECTS } from "../data/projects";
+import ProjectDetailsModal from "./ProjectDetailsModal";
 
 export default function Projects() {
+  const [activeProject, setActiveProject] = useState(null);
+
   return (
     <section id="projects" className="relative w-full py-16 md:py-24 px-6 sm:px-8 lg:px-12 bg-transparent border-t border-border-color transition-colors duration-350">
       <div className="mx-auto max-w-[1440px] w-full">
@@ -23,7 +27,7 @@ export default function Projects() {
             Featured Projects & Engineering
           </h2>
           <p className="text-xs sm:text-sm text-foreground/50 max-w-md">
-            A hand-picked selection of full-stack systems, e-commerce engines, and motion agency landings.
+            A premium selection of production-grade full-stack ecosystems, livestock marketplaces, and developer portals.
           </p>
         </div>
 
@@ -45,16 +49,23 @@ export default function Projects() {
                   {/* Subtle vector grid and emerald/mint glow */}
                   <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(5,150,105,0.06),transparent_100%)] dark:bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(16,185,129,0.08),transparent_100%)] pointer-events-none" />
                   
-                  {/* Minimal tech window mock */}
-                  <div className="w-[80%] h-[75%] rounded-lg border border-border-color bg-card-bg shadow-md p-3 space-y-2 flex flex-col justify-between group-hover:scale-103 transition-transform duration-500">
-                    <div className="flex items-center space-x-1.5 border-b border-border-color pb-1.5">
-                      <div className="w-2 h-2 rounded-full bg-red-400/60" />
-                      <div className="w-2 h-2 rounded-full bg-amber-400/60" />
-                      <div className="w-2 h-2 rounded-full bg-emerald-400/60" />
-                      <div className="text-[9px] text-foreground/30 font-mono ml-2">localhost:3000</div>
+                  {/* Minimal tech window mock with screenshot background */}
+                  <div className="w-[85%] h-[80%] rounded-lg border border-border-color bg-card-bg shadow-md flex flex-col overflow-hidden group-hover:scale-103 transition-transform duration-500 relative">
+                    <div className="flex items-center space-x-1.2 border-b border-border-color pb-1.5 pt-2 px-3 bg-neutral-50 dark:bg-neutral-950/60 shrink-0">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-400/60" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-amber-400/60" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400/60" />
+                      <div className="text-[8px] text-foreground/30 font-mono ml-2 truncate max-w-[150px]">
+                        {project.live.replace("https://", "").replace("www.", "")}
+                      </div>
                     </div>
-                    <div className="flex-grow flex items-center justify-center">
-                      <span className="text-[10px] font-bold text-foreground/40 font-mono uppercase tracking-widest">{project.id}</span>
+                    <div className="flex-grow relative bg-neutral-200 dark:bg-neutral-950">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover object-top select-none"
+                      />
                     </div>
                   </div>
                 </div>
@@ -76,7 +87,7 @@ export default function Projects() {
               {/* Tech Badges & View Details CTA */}
               <div className="pt-6 border-t border-border-color/60 mt-6 space-y-4">
                 <div className="flex flex-wrap gap-1.5">
-                  {project.tech.map((t) => (
+                  {project.tech.slice(0, 4).map((t) => (
                     <span
                       key={t}
                       className="text-[9px] font-bold px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-900 border border-border-color text-foreground/60"
@@ -84,11 +95,15 @@ export default function Projects() {
                       {t}
                     </span>
                   ))}
+                  {project.tech.length > 4 && (
+                    <span className="text-[9px] font-bold px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-900 border border-border-color text-foreground/40">
+                      +{project.tech.length - 4} more
+                    </span>
+                  )}
                 </div>
 
                 <Button
-                  as={Link}
-                  href={`/projects/${project.id}`}
+                  onClick={() => setActiveProject(project)}
                   className="w-full font-bold bg-primary/5 border border-primary/20 hover:bg-primary hover:text-primary-foreground text-primary rounded-xl py-5 transition-all duration-300 flex items-center justify-center space-x-1 cursor-pointer"
                 >
                   <span>View Details</span>
@@ -100,6 +115,14 @@ export default function Projects() {
         </div>
 
       </div>
+
+      {/* Project Details Modal Popup */}
+      <ProjectDetailsModal
+        isOpen={!!activeProject}
+        project={activeProject}
+        onClose={() => setActiveProject(null)}
+      />
     </section>
   );
 }
+

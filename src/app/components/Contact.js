@@ -33,7 +33,7 @@ export default function Contact() {
             <div className="space-y-4">
               {/* Email Anchor */}
               <a
-                href="mailto:contact@kazolhabib.com"
+                href="mailto:kazoll.habibb@gmail.com"
                 className="flex items-center space-x-3.5 p-4 rounded-xl border border-border-color/80 hover:border-primary text-foreground/75 hover:text-primary transition-all duration-300 group cursor-pointer"
               >
                 <div className="p-2.5 rounded-lg bg-primary/5 border border-primary/10 max-w-fit">
@@ -41,13 +41,13 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-foreground/40 uppercase tracking-wider">Email Me</p>
-                  <p className="text-xs sm:text-sm font-bold mt-0.5">kazolhabib.dev@gmail.com</p>
+                  <p className="text-xs sm:text-sm font-bold mt-0.5">kazoll.habibb@gmail.com</p>
                 </div>
               </a>
 
               {/* Call Anchor */}
               <a
-                href="tel:+880170000000"
+                href="tel:+8801760944167"
                 className="flex items-center space-x-3.5 p-4 rounded-xl border border-border-color/80 hover:border-primary text-foreground/75 hover:text-primary transition-all duration-300 group cursor-pointer"
               >
                 <div className="p-2.5 rounded-lg bg-primary/5 border border-primary/10 max-w-fit">
@@ -55,14 +55,14 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-foreground/40 uppercase tracking-wider">Call Me</p>
-                  <p className="text-xs sm:text-sm font-bold mt-0.5">+880 1787-889816</p>
+                  <p className="text-xs sm:text-sm font-bold mt-0.5">+880 1760-944167</p>
                 </div>
               </a>
 
               {/* WhatsApp Quick Connect (Pulsing blue glow on hover) */}
               <Button
                 as="a"
-                href="https://wa.me/8801787889816"
+                href="https://wa.me/8801760944167"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full font-bold bg-primary text-primary-foreground rounded-xl py-6 hover:scale-102 transition-transform duration-350 shadow-md shadow-primary/10 flex items-center justify-center space-x-2 cursor-pointer"

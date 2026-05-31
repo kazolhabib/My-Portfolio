@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { Download, ArrowUpRight } from "lucide-react";
+import { Download, ArrowUpRight, Mail } from "lucide-react";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -23,11 +23,7 @@ const LinkedinIcon = (props) => (
   </svg>
 );
 
-const TwitterIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-  </svg>
-);
+// Custom inline SVGs for brands
 
 const FacebookIcon = (props) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -252,18 +248,18 @@ export default function Hero() {
           {/* Card 5: Social Deck (Col span-12 md:col-span-4 p-8 bento-card flex items-center justify-around min-h-[100px]) */}
           <div className="md:col-span-4 p-8 bento-card flex items-center justify-around min-h-[100px]">
             {[
-              { icon: GithubIcon, label: "GitHub", href: "https://github.com" },
-              { icon: LinkedinIcon, label: "LinkedIn", href: "https://linkedin.com" },
-              { icon: TwitterIcon, label: "Twitter", href: "https://twitter.com" },
-              { icon: FacebookIcon, label: "Facebook", href: "https://facebook.com" },
+              { icon: GithubIcon, label: "GitHub", href: "https://github.com/kazolhabib", target: "_blank", rel: "noopener noreferrer" },
+              { icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/kazol-habib/", target: "_blank", rel: "noopener noreferrer" },
+              { icon: Mail, label: "Email", href: "mailto:kazoll.habibb@gmail.com" },
+              { icon: FacebookIcon, label: "Facebook", href: "https://www.facebook.com/kazollhabib", target: "_blank", rel: "noopener noreferrer" },
             ].map((social) => {
               const Icon = social.icon;
               return (
                 <a
                   key={social.label}
                   href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={social.target}
+                  rel={social.rel}
                   className="p-3.5 rounded-xl border border-border-color hover:border-primary text-foreground/60 hover:text-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/5 transition-all duration-350 cursor-pointer"
                   aria-label={social.label}
                 >

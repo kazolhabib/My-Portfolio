@@ -2,6 +2,7 @@ import { PROJECTS } from "../../data/projects";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink, Sparkles, AlertTriangle, Cpu } from "lucide-react";
 import { Button } from "@heroui/react";
+import SourceCodeButton from "../../components/SourceCodeButton";
 
 export async function generateStaticParams() {
   return PROJECTS.map((project) => ({
@@ -93,17 +94,10 @@ export default async function ProjectDetailsPage({ params }) {
                 <ExternalLink className="h-4 w-4" />
               </Button>
 
-              <Button
-                as="a"
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="bordered"
+              <SourceCodeButton
+                project={project}
                 className="w-full font-bold border-border-color hover:border-primary text-foreground rounded-xl py-5.5 hover:bg-primary/5 transition-all duration-350 flex items-center justify-center space-x-2 cursor-pointer"
-              >
-                <span>Source Code</span>
-                <GithubIcon className="h-4.5 w-4.5" />
-              </Button>
+              />
             </div>
           </div>
 
