@@ -122,7 +122,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 bg-transparent ${
-        scrolled ? "pt-4 px-4 sm:px-6 md:px-12" : "pt-0 px-0"
+        scrolled ? "pt-4 px-4 sm:px-6 lg:px-8 xl:px-12" : "pt-0 px-0"
       }`}
     >
       <div
@@ -164,7 +164,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation Links with sliding background capsules */}
-        <nav className="hidden md:flex items-center space-x-2">
+        <nav className="hidden xl:flex items-center space-x-2">
           {NAV_LINKS.map((link, idx) => (
             <a
               key={link.label}
@@ -212,7 +212,7 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden xl:flex items-center space-x-4">
           {/* Theme Toggle (Borderless Glass style) */}
           <button
             onClick={toggleTheme}
@@ -261,7 +261,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile hamburger menu & theme button */}
-        <div className="flex md:hidden items-center space-x-2">
+        <div className="flex xl:hidden items-center space-x-2">
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}

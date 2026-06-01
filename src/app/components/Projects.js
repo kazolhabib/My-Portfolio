@@ -291,26 +291,26 @@ export default function Projects() {
           </motion.div>
         </div>
 
-        {/* Sliding horizontal glassmorphic filter pill selection */}
-        <div className="flex justify-center mb-14 relative z-10 w-full px-2">
-          <div className="flex items-center gap-1 p-1.5 rounded-2.5xl bg-neutral-100/80 dark:bg-neutral-900/60 border border-border-color/10 dark:border-white/[0.03] backdrop-blur-xl max-w-full overflow-x-auto custom-scrollbar shadow-inner relative">
+        {/* Premium luxury segmented filter pill selection */}
+        <div className="flex justify-center mb-14 relative z-10 w-full px-4">
+          <div className="flex flex-wrap items-center justify-center gap-2 p-2 rounded-[2rem] bg-white/40 dark:bg-neutral-950/40 border border-border-color/10 dark:border-white/[0.03] backdrop-blur-xl max-w-3xl shadow-lg relative">
             {FILTERS.map((filter) => {
               const isActive = activeFilter === filter;
               return (
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
-                  className={`relative px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-extrabold tracking-wide cursor-pointer transition-all duration-350 select-none whitespace-nowrap ${
+                  className={`relative px-5 py-2.5 rounded-[1.25rem] text-[10px] sm:text-[11px] font-extrabold tracking-[0.16em] uppercase cursor-pointer transition-all duration-350 select-none ${
                     isActive
-                      ? "text-primary-foreground dark:text-neutral-950"
-                      : "text-foreground/50 hover:text-foreground/80 hover:bg-neutral-200/40 dark:hover:bg-neutral-800/40"
+                      ? "text-white dark:text-white"
+                      : "text-foreground/50 hover:text-foreground/85 hover:bg-white/50 dark:hover:bg-neutral-900/50"
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activeFilterPill"
-                      className="absolute inset-0 bg-primary dark:bg-primary rounded-2xl z-0"
-                      transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                      className="absolute inset-0 bg-primary dark:bg-emerald-600 rounded-[1.25rem] z-0 shadow-md shadow-primary/10 dark:shadow-emerald-500/10"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
                   <span className="relative z-10">{filter}</span>

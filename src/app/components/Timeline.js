@@ -108,20 +108,28 @@ export default function Timeline() {
         {/* Interactive Stepper Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
 
-          {/* Mobile Horizontal Carousel Tabs */}
-          <div className="flex lg:hidden overflow-x-auto gap-3 pb-4 scrollbar-none snap-x snap-mandatory z-10 relative">
+          {/* Mobile Vertical Wrapped Tabs */}
+          <div className="flex lg:hidden flex-wrap items-center justify-center gap-2 p-1.5 rounded-[1.75rem] bg-white/40 dark:bg-neutral-950/40 border border-border-color/10 dark:border-white/[0.03] backdrop-blur-xl mb-6 z-10 relative w-full px-2">
             {TIMELINE_ITEMS.map((item, idx) => {
               const isActive = idx === activeIndex;
               return (
                 <button
                   key={item.title}
                   onClick={() => setActiveIndex(idx)}
-                  className={`snap-center shrink-0 px-5 py-3 rounded-full text-xs font-extrabold tracking-wider uppercase transition-all duration-300 select-none border-0 cursor-pointer ${isActive
-                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/15"
-                      : "bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl text-foreground/50 hover:text-foreground border border-border-color/10"
-                    }`}
+                  className={`relative flex-grow sm:flex-initial px-5 py-2.5 rounded-xl text-[10px] font-extrabold tracking-[0.16em] uppercase cursor-pointer transition-all duration-350 select-none ${
+                    isActive
+                      ? "text-white dark:text-white"
+                      : "text-foreground/50 hover:text-foreground/85 hover:bg-white/50 dark:hover:bg-neutral-900/50"
+                  }`}
                 >
-                  {item.date}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTimelineMobilePill"
+                      className="absolute inset-0 bg-primary dark:bg-emerald-600 rounded-xl z-0 shadow-md shadow-primary/10 dark:shadow-emerald-500/10"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{item.date}</span>
                 </button>
               );
             })}
