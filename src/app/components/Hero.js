@@ -277,7 +277,7 @@ export default function Hero() {
                   <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
                     Resume
                   </span>
-                  <span className="block absolute top-0 left-0 text-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full group-hover/btn:translate-y-0 font-bold">
+                  <span className="block absolute top-0 left-0 text-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-[120%] group-hover/btn:translate-y-0 font-bold">
                     Resume
                   </span>
                 </span>
@@ -295,7 +295,7 @@ export default function Hero() {
                   <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
                     Let&apos;s Talk
                   </span>
-                  <span className="block absolute top-0 left-0 text-primary transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full group-hover/btn:translate-y-0 font-bold">
+                  <span className="block absolute top-0 left-0 text-primary transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-[120%] group-hover/btn:translate-y-0 font-bold">
                     Let&apos;s Talk
                   </span>
                 </span>

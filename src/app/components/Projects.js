@@ -225,7 +225,7 @@ function ProjectCard({ project, idx, onClick }) {
               <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
                 Case Study
               </span>
-              <span className="block absolute top-0 left-0 text-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full group-hover/btn:translate-y-0 font-extrabold">
+              <span className="block absolute top-0 left-0 text-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-[120%] group-hover/btn:translate-y-0 font-extrabold">
                 Case Study
               </span>
             </span>
