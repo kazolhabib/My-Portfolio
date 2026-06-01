@@ -221,7 +221,7 @@ function ProjectCard({ project, idx, onClick }) {
             }}
             className="flex items-center space-x-2 px-5 py-3 rounded-xl font-extrabold text-xs tracking-wider uppercase bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 transition-all duration-300 shadow-md shadow-primary/10 hover:shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] cursor-pointer group/btn"
           >
-            <span>Explore Case Study</span>
+            <span>Case Study</span>
             <ArrowUpRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-300" />
           </button>
         </div>
