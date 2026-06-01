@@ -293,7 +293,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden mt-2 bg-white/95 dark:bg-neutral-950/95 backdrop-blur-2xl border border-border-color/20 shadow-2xl rounded-2xl overflow-hidden max-w-[450px] mx-auto"
+            className="absolute left-6 right-6 top-full mt-2 bg-white/95 dark:bg-neutral-950/95 backdrop-blur-2xl border border-border-color/20 shadow-2xl rounded-2xl overflow-hidden z-50"
           >
             <div className="px-6 py-6 space-y-4 flex flex-col">
               {NAV_LINKS.map((link, idx) => (

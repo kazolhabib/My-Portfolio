@@ -26,7 +26,7 @@ const SKILL_GROUPS = [
     title: "No-Code Power",
     description: "Structuring pixel-perfect layouts, responsive interactions, and content architectures.",
     icon: Compass,
-    skills: ["Webflow Expert", "CMS", "Interactions", "CMS Architecture"],
+    skills: ["Webflow Expert", "CMS", "Interactions", "CMS Architecture","GSAP Animations"],
   },
 ];
 
