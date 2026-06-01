@@ -77,8 +77,8 @@ export default function Timeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="sticky w-full group overflow-hidden relative p-8 md:p-10 bg-white/50 dark:bg-neutral-900/40 backdrop-blur-xl border-0 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.45)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(0,0,0,0.05),0_15px_40px_-15px_rgba(5,150,105,0.08)] dark:hover:shadow-[0_35px_70px_rgba(0,0,0,0.65),0_20px_45px_-15px_rgba(16,185,129,0.12)] flex flex-col justify-between"
-                style={{ top: `${130 + idx * 36}px` }}
+                className="sticky w-full group overflow-hidden relative p-8 md:p-10 bg-white/60 dark:bg-neutral-900/45 backdrop-blur-xl border border-white/30 dark:border-neutral-800/40 hover:border-primary/20 dark:hover:border-primary/30 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.015)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04),0_15px_40px_-15px_rgba(5,150,105,0.08)] dark:hover:shadow-[0_35px_70px_rgba(0,0,0,0.55),0_20px_45px_-15px_rgba(16,185,129,0.12)] flex flex-col justify-between origin-top"
+                style={{ top: `${130 + idx * 36}px`, scale: 0.94 + idx * 0.03, transformOrigin: "top" }}
               >
                 {/* Card Glow & Blueprint Backdrops */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
