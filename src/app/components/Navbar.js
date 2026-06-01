@@ -257,7 +257,7 @@ export default function Navbar() {
           {/* Theme Toggle (Borderless Glass style) */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-neutral-100/50 dark:hover:bg-neutral-900/40 cursor-pointer overflow-hidden relative w-9 h-9 flex items-center justify-center transition-all duration-200 border-0"
+            className="group p-2 rounded-full hover:bg-primary/10 dark:hover:bg-emerald-500/15 hover:scale-110 active:scale-95 cursor-pointer overflow-hidden relative w-10 h-10 flex items-center justify-center transition-all duration-300 border border-transparent hover:border-primary/25 dark:hover:border-emerald-500/30 hover:shadow-[0_0_20px_rgba(16,185,129,0.15)] shadow-none"
             aria-label="Toggle Theme"
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -269,7 +269,7 @@ export default function Navbar() {
                   exit={{ y: -15, rotate: -45, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Sun className="h-4.5 w-4.5 text-primary" />
+                  <Sun className="h-5 w-5 text-primary group-hover:rotate-[45deg] group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
                 </motion.div>
               ) : (
                 <motion.div
@@ -279,7 +279,7 @@ export default function Navbar() {
                   exit={{ y: -15, rotate: 45, opacity: 0 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Moon className="h-4.5 w-4.5 text-primary" />
+                  <Moon className="h-5 w-5 text-primary group-hover:-rotate-[30deg] group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -313,13 +313,13 @@ export default function Navbar() {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-neutral-100/50 dark:hover:bg-neutral-900/40 w-9 h-9 flex items-center justify-center cursor-pointer border-0"
+            className="group p-2 rounded-full hover:bg-primary/10 dark:hover:bg-emerald-500/15 hover:scale-105 active:scale-95 w-10 h-10 flex items-center justify-center cursor-pointer transition-all duration-300 border border-transparent hover:border-primary/25 dark:hover:border-emerald-500/30 hover:shadow-[0_0_15px_rgba(16,185,129,0.12)]"
             aria-label="Toggle Theme"
           >
             {currentTheme === "dark" ? (
-              <Sun className="h-4.5 w-4.5 text-primary" />
+              <Sun className="h-5 w-5 text-primary group-hover:rotate-[45deg] group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
             ) : (
-              <Moon className="h-4.5 w-4.5 text-primary" />
+              <Moon className="h-5 w-5 text-primary group-hover:-rotate-[30deg] group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
             )}
           </button>
 

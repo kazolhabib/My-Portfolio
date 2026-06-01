@@ -6,7 +6,7 @@ import { User, Palette, Sparkles, Code } from "lucide-react";
 import InteractiveDotGrid from "./InteractiveDotGrid";
 
 // High-performance Direct-DOM viewport-aware Counter component
-function Counter({ value, suffix = "", duration = 2.2 }) {
+function Counter({ value, suffix = "", duration = 3.5 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
