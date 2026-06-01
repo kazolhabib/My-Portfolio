@@ -66,65 +66,71 @@ export default function Timeline() {
           </p>
         </motion.div>
 
-        {/* Sleek Vertical Timeline */}
-        <div className="relative border-l border-border-color dark:border-border-color/80 ml-4 md:ml-8 space-y-12">
-
+        {/* Layered Sticky Stacking Cards Deck */}
+        <div className="relative flex flex-col gap-10 md:gap-12 pb-24 max-w-5xl mx-auto z-10">
           {TIMELINE_ITEMS.map((item, idx) => {
             const Icon = item.icon;
             return (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="relative pl-8 sm:pl-12 group"
+                transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="sticky w-full group overflow-hidden relative p-8 md:p-10 bg-white/50 dark:bg-neutral-900/40 backdrop-blur-xl border-0 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.45)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(0,0,0,0.05),0_15px_40px_-15px_rgba(5,150,105,0.08)] dark:hover:shadow-[0_35px_70px_rgba(0,0,0,0.65),0_20px_45px_-15px_rgba(16,185,129,0.12)] flex flex-col justify-between"
+                style={{ top: `${130 + idx * 36}px` }}
               >
-                {/* Timeline Icon node with gold highlights */}
-                <span className="absolute left-0 top-1.5 -translate-x-1/2 w-8 h-8 rounded-full bg-card-bg border-2 border-border-color group-hover:border-primary flex items-center justify-center transition-all duration-300 shadow-sm">
-                  <Icon className="h-3.5 w-3.5 text-foreground/75 group-hover:text-primary transition-colors duration-300" />
-                </span>
+                {/* Card Glow & Blueprint Backdrops */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
+                <div className="absolute inset-0 bg-dot-grid opacity-[0.03] dark:opacity-[0.05] pointer-events-none z-0" />
 
-                {/* Content Block */}
-                <div className="bento-card p-6 md:p-8 space-y-4">
+                <div className="space-y-6 z-10 relative">
+                  {/* Top Meta & Icon Row */}
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center space-x-3">
+                      <span className="inline-block text-[10px] sm:text-xs font-bold text-primary px-3 py-1.5 rounded-xl bg-primary/5 border border-primary/10 select-none">
+                        {item.date}
+                      </span>
+                      <span className="text-[10px] font-extrabold text-foreground/45 uppercase tracking-widest leading-none select-none">
+                        {item.type}
+                      </span>
+                    </div>
 
-                  {/* Meta Details */}
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                    <span className="inline-block text-[0.6875rem] font-bold text-primary px-2.5 py-1 rounded-md bg-primary/5 border border-primary/10 max-w-fit">
-                      {item.date}
-                    </span>
-                    <span className="text-xs text-foreground/45 flex items-center font-medium capitalize">
-                      {item.type}
-                    </span>
+                    {/* Circular Floating Glass Icon Badge */}
+                    <div className="p-3.5 rounded-full bg-white/60 dark:bg-neutral-950/40 backdrop-blur-md shadow-sm text-primary transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-primary/10 flex items-center justify-center shrink-0">
+                      <Icon className="h-5 w-5" />
+                    </div>
                   </div>
 
                   {/* Title & Info */}
                   <div className="space-y-1">
-                    <h3 className="text-lg md:text-xl font-extrabold text-foreground group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-xl md:text-2.5xl font-black text-foreground leading-snug group-hover:text-primary transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-xs font-semibold text-foreground/60">{item.subtitle}</p>
+                    <p className="text-xs md:text-sm font-bold text-foreground/50">
+                      {item.subtitle}
+                    </p>
                   </div>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed max-w-3xl">
+                  <p className="text-xs sm:text-sm md:text-base text-foreground/65 leading-relaxed font-normal max-w-4xl">
                     {item.description}
                   </p>
-
-                  {/* Technology Badges */}
-                  {item.skills && (
-                    <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border-color/40">
-                      {item.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="text-[10px] font-semibold px-2.5 py-1 rounded-lg bg-neutral-100/50 dark:bg-neutral-900/50 border border-border-color/80 text-foreground/70 hover:border-primary hover:text-primary transition-all duration-200 cursor-default select-none"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  )}
                 </div>
+
+                {/* Technology Badges */}
+                {item.skills && (
+                  <div className="flex flex-wrap gap-2 pt-6 mt-8 border-t border-border-color/10 z-10 relative">
+                    {item.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="text-[11px] font-bold px-3.5 py-2 rounded-xl bg-white/60 dark:bg-neutral-950/40 backdrop-blur-md shadow-sm border-0 text-foreground/80 hover:text-primary hover:scale-105 active:scale-95 transition-all duration-200 cursor-default select-none"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </motion.div>
             );
           })}
