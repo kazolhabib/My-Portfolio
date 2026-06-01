@@ -7,7 +7,7 @@ import { Briefcase, Calendar, GraduationCap } from "lucide-react";
 const TIMELINE_ITEMS = [
   {
     type: "work",
-    date: "2025 - Present",
+    date: "2026 - Present",
     title: "Full-Stack Next.js & React Engineer",
     subtitle: "Enterprise Applications & Open Source",
     description: "Developing secure, high-performance web applications. Specializing in robust RESTful APIs with Express, scalable database architectures with MongoDB, and bulletproof user session management with Better Auth. Bridging engineering-grade backend layers with dynamic, server-side rendered React and Next.js frontend interfaces.",

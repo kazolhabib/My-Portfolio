@@ -1,70 +1,111 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Cpu, Terminal, Compass, Layers, ShieldCheck } from "lucide-react";
 
 const SKILL_GROUPS = [
   {
+    id: "frontend",
     title: "Frontend Architecture",
     description: "Creating highly dynamic, responsive visual layers with modular components.",
     icon: Terminal,
-    skills: ["HTML5", "CSS3", "JavaScript", "React", "Next.js", "Tailwind CSS"],
+    skills: [
+      { name: "Next.js", value: 95, level: "Production-grade" },
+      { name: "React.JS", value: 92, level: "Expert" },
+      { name: "TypeScript", value: 85, level: "Advanced" },
+      { name: "JavaScript ES6+", value: 94, level: "Expert" },
+      { name: "Tailwind CSS", value: 96, level: "Fluid Styling" },
+      { name: "HTML5/CSS3", value: 95, level: "Semantic Grid" },
+    ],
   },
   {
+    id: "ui-systems",
     title: "UI Systems",
     description: "Designing modern, fluid interface systems for speed and unified design language.",
     icon: Layers,
-    skills: ["Shadcn UI", "Hero UI", "Daisy UI", "Radix UI", "Headless UI"],
+    skills: [
+      { name: "Shadcn UI", value: 92, level: "Sleek Customization" },
+      { name: "Hero UI", value: 90, level: "Glass Components" },
+      { name: "Radix UI", value: 88, level: "Accessible Headless" },
+      { name: "Framer Motion", value: 93, level: "Micro-animations" },
+      { name: "GSAP Animations", value: 85, level: "Complex Timelines" },
+    ],
   },
   {
+    id: "backend",
     title: "Backend & Database",
-    description: "Building resilient server infrastructures, relational schemas, and secure token auth.",
+    description: "Building resilient server infrastructures, database schemas, and secure authentication.",
     icon: ShieldCheck,
-    skills: ["Node.js", "MongoDB", "Better Auth", "Express.js"],
+    skills: [
+      { name: "Node.js", value: 90, level: "Architecture" },
+      { name: "Express.js", value: 92, level: "Rest API" },
+      { name: "MongoDB", value: 88, level: "Aggregation Pipelines" },
+      { name: "Better Auth", value: 91, level: "Secure Token Session" },
+      { name: "RESTful APIs", value: 93, level: "High Performance" },
+    ],
   },
   {
+    id: "nocode",
     title: "No-Code Power",
-    description: "Structuring pixel-perfect layouts, responsive interactions, and content architectures.",
+    description: "Structuring pixel-perfect layouts, interactive animations, and custom visual platforms.",
     icon: Compass,
-    skills: ["Webflow Expert", "CMS", "Interactions", "CMS Architecture","GSAP Animations"],
+    skills: [
+      { name: "Webflow Expert", value: 96, level: "Core Architecture" },
+      { name: "Webflow CMS", value: 94, level: "Relational Schemas" },
+      { name: "Custom Code Embed", value: 88, level: "API Hooking" },
+      { name: "Client First Style", value: 95, level: "Perfect Semantics" },
+      { name: "SEO Optimization", value: 91, level: "Search Visibility" },
+    ],
   },
 ];
 
-const cardVariants = {
-  initial: { opacity: 0, y: 35 },
-  animate: (index) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      delay: index * 0.1,
-      ease: [0.16, 1, 0.3, 1]
-    }
-  }),
-  hover: {
-    y: -8,
-    transition: {
-      duration: 0.5,
-      ease: [0.16, 1, 0.3, 1]
-    }
-  }
-};
+function CircularProgress({ value }) {
+  const radius = 18;
+  const strokeWidth = 3;
+  const circumference = 2 * Math.PI * radius; // ~113.1
+  const strokeDashoffset = circumference - (value / 100) * circumference;
 
-const badgeVariants = {
-  initial: { y: 0, scale: 1 },
-  hover: (index) => ({
-    y: -6,
-    scale: 1.04,
-    transition: {
-      type: "spring",
-      stiffness: 260,
-      damping: 15,
-      delay: index * 0.04,
-    }
-  })
-};
+  return (
+    <div className="relative w-12 h-12 flex items-center justify-center shrink-0">
+      <svg className="w-12 h-12 transform -rotate-90 select-none">
+        {/* Background track circle */}
+        <circle
+          cx="24"
+          cy="24"
+          r={radius}
+          stroke="currentColor"
+          strokeWidth={strokeWidth}
+          fill="transparent"
+          className="text-neutral-200/40 dark:text-neutral-800/40"
+        />
+        {/* Foreground animated gradient circle */}
+        <motion.circle
+          cx="24"
+          cy="24"
+          r={radius}
+          stroke="currentColor"
+          strokeWidth={strokeWidth}
+          fill="transparent"
+          strokeDasharray={circumference}
+          initial={{ strokeDashoffset: circumference }}
+          whileInView={{ strokeDashoffset }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="text-primary"
+        />
+      </svg>
+      {/* Center percentage text */}
+      <span className="absolute text-[10px] font-black text-foreground">
+        {value}%
+      </span>
+    </div>
+  );
+}
 
 export default function Skills() {
+  const [activeTab, setActiveTab] = useState(0);
+
   return (
     <section id="skills" className="relative w-full py-16 md:py-24 px-6 sm:px-8 lg:px-12 bg-transparent transition-colors duration-350 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10" />
@@ -101,62 +142,126 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        {/* 4-Card Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-          {SKILL_GROUPS.map((group, groupIdx) => {
-            const Icon = group.icon;
-            return (
-              <motion.div
-                key={group.title}
-                custom={groupIdx}
-                variants={cardVariants}
-                initial="initial"
-                whileInView="animate"
-                whileHover="hover"
-                viewport={{ once: true }}
-                className="p-8 bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl border-0 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] flex flex-col justify-between min-h-[340px] group overflow-hidden relative"
-              >
-                {/* Card Glow & Grid Backdrops */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-750 pointer-events-none z-0" />
-                <div className="absolute inset-0 bg-dot-grid opacity-[0.03] dark:opacity-[0.05] pointer-events-none z-0" />
-                
-                {/* Subtle bottom-right background glow blur */}
-                <div className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-primary/10 blur-2xl group-hover:scale-130 transition-transform duration-750 pointer-events-none z-0" />
+        {/* Futuristic Tab Console Container */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
+          
+          {/* Left Console selector tabs */}
+          <div className="lg:col-span-4 col-span-12 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible scrollbar-none gap-3 pb-3 lg:pb-0 border-b lg:border-b-0 border-border-color/10">
+            {SKILL_GROUPS.map((group, idx) => {
+              const Icon = group.icon;
+              const isActive = activeTab === idx;
 
-                <div className="space-y-6 z-10 relative">
-                  {/* Icon & Title */}
-                  <div className="flex items-center justify-between">
-                    <div className="p-3.5 rounded-2xl bg-white/60 dark:bg-neutral-950/40 backdrop-blur-md border-0 shadow-[0_4px_12px_rgba(0,0,0,0.02)] text-primary transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-primary/10 group-hover:text-primary max-w-fit">
-                      <Icon className="h-6 w-6 transition-transform duration-500" />
+              return (
+                <button
+                  key={group.id}
+                  onClick={() => setActiveTab(idx)}
+                  className={`relative w-full text-left p-4 sm:p-5 rounded-2xl sm:rounded-3xl transition-all duration-350 cursor-pointer border-0 select-none shrink-0 ${
+                    isActive 
+                      ? "bg-white/80 dark:bg-neutral-900/70 shadow-lg shadow-primary/5" 
+                      : "bg-white/30 dark:bg-neutral-900/20 hover:bg-white/50 dark:hover:bg-neutral-900/40"
+                  } flex items-center justify-between min-w-[200px] sm:min-w-[240px] lg:min-w-0 z-10`}
+                >
+                  {/* Sliding capsule background */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="active-skill-tab-bg"
+                      className="absolute inset-0 bg-white/70 dark:bg-neutral-900/60 rounded-2xl sm:rounded-3xl border border-primary/20 pointer-events-none z-0"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+
+                  <div className="flex items-center space-x-3.5 z-10 relative">
+                    {/* Glass Icon frame */}
+                    <div className={`p-2.5 rounded-xl transition-all duration-350 ${
+                      isActive 
+                        ? "bg-primary text-primary-foreground dark:bg-emerald-600" 
+                        : "bg-white/80 dark:bg-neutral-950/40 text-primary"
+                    }`}>
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    
+                    <div className="flex flex-col text-left">
+                      <span className={`text-sm sm:text-base font-extrabold tracking-tight ${
+                        isActive ? "text-foreground" : "text-foreground/75"
+                      }`}>
+                        {group.title}
+                      </span>
+                      <span className="text-[10px] text-foreground/40 hidden lg:block truncate max-w-[200px] mt-0.5 font-normal">
+                        {group.description}
+                      </span>
                     </div>
                   </div>
 
-                  <div className="space-y-2.5">
-                    <h3 className="text-xl font-bold tracking-tight text-foreground">
-                      {group.title}
-                    </h3>
-                    <p className="text-xs text-foreground/60 leading-relaxed font-normal">
-                      {group.description}
-                    </p>
+                  {/* Neon active status Led Dot */}
+                  <div className="flex items-center z-10 relative">
+                    <span className={`h-2 w-2 rounded-full transition-all duration-350 ${
+                      isActive 
+                        ? "bg-primary animate-pulse shadow-[0_0_8px_var(--heroui-primary)] dark:shadow-[0_0_8px_#10b981]" 
+                        : "bg-foreground/15"
+                    }`} />
                   </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Right Console dynamic dashboard */}
+          <div className="lg:col-span-8 col-span-12">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="p-6 sm:p-8 bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl border-0 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] relative overflow-hidden group min-h-[400px] text-left"
+              >
+                {/* Visual backdrops */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/[0.02] pointer-events-none z-0" />
+                <div className="absolute inset-0 bg-dot-grid opacity-[0.03] dark:opacity-[0.05] pointer-events-none z-0" />
+                <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-primary/8 blur-3xl pointer-events-none z-0 group-hover:scale-110 transition-transform duration-1000" />
+
+                {/* Pane Header */}
+                <div className="flex flex-col space-y-1.5 pb-6 border-b border-border-color/10 mb-6 z-10 relative">
+                  <h3 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+                    {SKILL_GROUPS[activeTab].title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-foreground/50 font-normal leading-relaxed">
+                    {SKILL_GROUPS[activeTab].description}
+                  </p>
                 </div>
 
-                {/* Badges Grid */}
-                <div className="flex flex-wrap gap-2 pt-6 mt-8 border-t border-border-color/10 z-10 relative">
-                  {group.skills.map((skill, skillIdx) => (
-                    <motion.span
-                      key={skill}
-                      custom={skillIdx}
-                      variants={badgeVariants}
-                      className="text-[11px] font-bold px-3 py-1.5 rounded-xl bg-white/60 dark:bg-neutral-950/40 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.02)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)] border-0 text-foreground/85 select-none cursor-default relative overflow-hidden transition-all duration-300 hover:scale-108 hover:text-primary hover:bg-white dark:hover:bg-neutral-900"
+                {/* Interactive Tech Grid Matrix */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 z-10 relative">
+                  {SKILL_GROUPS[activeTab].skills.map((skill, idx) => (
+                    <motion.div
+                      key={skill.name}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.05, duration: 0.5 }}
+                      className="p-4 sm:p-5 bg-white/60 dark:bg-neutral-950/30 hover:bg-white/95 dark:hover:bg-neutral-950/70 border border-border-color/5 hover:border-primary/20 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-lg transition-all duration-350 ease-out hover:-translate-y-0.5 flex items-center justify-between gap-4 group/card relative overflow-hidden"
                     >
-                      {skill}
-                    </motion.span>
+                      {/* Volumetric mini glow halo inside each card */}
+                      <div className="absolute -bottom-8 -right-8 w-16 h-16 rounded-full bg-primary/10 blur-xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                      <div className="flex flex-col text-left">
+                        <span className="text-sm sm:text-base font-extrabold text-foreground group-hover/card:text-primary transition-colors duration-300">
+                          {skill.name}
+                        </span>
+                        <span className="text-[10px] font-extrabold text-foreground/45 mt-1.5 uppercase tracking-widest leading-none">
+                          {skill.level}
+                        </span>
+                      </div>
+
+                      {/* Circular Gauge */}
+                      <CircularProgress value={skill.value} />
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>
-            );
-          })}
+            </AnimatePresence>
+          </div>
+
         </div>
 
       </div>
