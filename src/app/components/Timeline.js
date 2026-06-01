@@ -35,7 +35,8 @@ const TIMELINE_ITEMS = [
 
 export default function Timeline() {
   return (
-    <section id="timeline" className="relative w-full py-16 md:py-24 px-6 sm:px-8 lg:px-12 bg-transparent border-t border-border-color transition-colors duration-350 overflow-hidden">
+    <section id="timeline" className="relative w-full py-16 md:py-24 px-6 sm:px-8 lg:px-12 bg-transparent  transition-colors duration-350 overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10" />
       {/* Premium Background Mesh and Dot Grid Overlays */}
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
       <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
