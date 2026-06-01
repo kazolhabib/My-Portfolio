@@ -31,9 +31,10 @@ export const metadata = {
   metadataBase: new URL("https://github.com/kazolhabib"),
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/icon.svg", type: "image/svg+xml" }
     ],
-    shortcut: "/icon.svg",
+    shortcut: "/favicon.ico",
     apple: "/icon.svg",
   },
   openGraph: {
