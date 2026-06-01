@@ -66,26 +66,32 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
           {/* Left Column: Bold Collaborative Text */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-6 text-center lg:text-left z-10 relative"
+          >
             {/* Pulsing Get in Touch Badge */}
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-primary/8 text-primary max-w-fit shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] backdrop-blur-md mx-auto lg:mx-0 select-none">
-              <span className="relative flex h-2 w-2 mr-0.5">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl border border-primary/10 shadow-sm mx-auto lg:mx-0 select-none">
+              <span className="relative flex h-2 w-2 mr-1">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              <span className="text-[10px] sm:text-xs font-extrabold tracking-widest uppercase">
+              <span className="text-[10px] sm:text-xs font-extrabold tracking-wider text-primary uppercase">
                 Get In Touch
               </span>
             </div>
 
-            <h2 className="text-4.5xl sm:text-5xl lg:text-6xl font-black tracking-tight text-foreground leading-[1.08] max-w-2xl">
+            <h2 className="text-4.5xl sm:text-5xl lg:text-6.5xl font-black tracking-tight text-foreground leading-[1.05] max-w-2xl">
               Let's build something <br />
               <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">exceptional</span> together.
             </h2>
-            <p className="text-sm sm:text-base text-foreground/65 max-w-lg leading-relaxed mx-auto lg:mx-0 font-normal">
+            <p className="text-sm sm:text-base text-foreground/60 max-w-lg leading-relaxed mx-auto lg:mx-0 font-normal">
               Whether you need an optimized React application, a highly-converting Webflow landing page, or architectural guidance on web performance, I am always ready to collaborate. Let's connect!
             </p>
-          </div>
+          </motion.div>
 
           {/* Right Column: Premium Glassmorphic Connect Deck */}
           <div className={`lg:col-span-5 p-8 bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl border-0 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] transition-all duration-500 relative group overflow-hidden ${

@@ -15,17 +15,26 @@ export default function About() {
       <div className="relative z-10 mx-auto max-w-[90rem] w-full">
 
         {/* Section Header */}
-        <div className="flex flex-col space-y-3 mb-12">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-primary/5 border border-primary/20 accent-border max-w-fit">
-            <User className="h-4 w-4 text-primary" />
-            <span className="text-[0.625rem] sm:text-xs font-bold tracking-wider text-primary uppercase">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col space-y-3 mb-16 relative z-10"
+        >
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl border border-primary/10 shadow-sm max-w-fit">
+            <User className="h-4 w-4 text-primary animate-pulse" />
+            <span className="text-[10px] sm:text-xs font-extrabold tracking-wider text-primary uppercase">
               About Me
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground leading-[1.1]">
             The Story Behind the Screen
           </h2>
-        </div>
+          <p className="text-xs sm:text-sm text-foreground/50 max-w-md leading-relaxed font-normal">
+            A deep dive into my professional philosophy, design background, and full-stack engineering transition.
+          </p>
+        </motion.div>
 
         {/* Extremely Premium Background Glowing Blurs */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/6 dark:bg-primary/4 blur-[130px] pointer-events-none z-0 opacity-40 animate-[pulse_8s_infinite_alternate]" />
