@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
+import { motion, useMotionValue, useTransform, useSpring, AnimatePresence } from "framer-motion";
 import { Download, ArrowUpRight, Mail, MapPin, Globe, Sparkles } from "lucide-react";
 import { Button } from "@heroui/react";
 import Image from "next/image";
@@ -50,6 +50,7 @@ const TECH_TAGS = [
 export default function Hero() {
   const { openResume, triggerContactHighlight } = useResumeModal();
   const [typedText, setTypedText] = useState("");
+  const [copied, setCopied] = useState(false);
   const fullText = "Full-Stack Developer & Webflow Expert";
 
   // Typing effect logic
@@ -283,13 +284,30 @@ export default function Hero() {
                   onClick={(e) => {
                     if (social.label === "Email") {
                       e.preventDefault();
-                      window.location.href = social.href;
+                      navigator.clipboard.writeText("kazoll.habibb@gmail.com");
+                      setCopied(true);
+                      window.location.href = "mailto:kazoll.habibb@gmail.com";
+                      setTimeout(() => setCopied(false), 2000);
                     }
                   }}
-                  className="p-3.5 rounded-xl border border-border-color hover:border-primary text-foreground/60 hover:text-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/5 transition-all duration-350 cursor-pointer"
+                  className="relative p-3.5 rounded-xl border border-border-color hover:border-primary text-foreground/60 hover:text-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/5 transition-all duration-350 cursor-pointer"
                   aria-label={social.label}
                 >
                   <Icon className="h-5 w-5" />
+                  
+                  {/* Floating "Copied!" badge */}
+                  <AnimatePresence>
+                    {social.label === "Email" && copied && (
+                      <motion.span
+                        initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.8 }}
+                        className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 rounded bg-neutral-950 dark:bg-neutral-900 border border-primary/20 text-[9px] font-bold text-primary whitespace-nowrap shadow-xl"
+                      >
+                        Copied!
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
                 </a>
               );
             })}
