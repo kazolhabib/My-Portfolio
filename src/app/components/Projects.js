@@ -219,9 +219,16 @@ function ProjectCard({ project, idx, onClick }) {
               e.stopPropagation();
               onClick();
             }}
-            className="flex items-center space-x-2 px-5 py-3 rounded-xl font-extrabold text-xs tracking-wider uppercase bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 transition-all duration-300 shadow-md shadow-primary/10 hover:shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] cursor-pointer group/btn"
+            className="group/btn flex items-center space-x-2 px-5 py-3 rounded-xl font-extrabold text-xs tracking-wider uppercase bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 transition-all duration-300 shadow-md shadow-primary/10 hover:shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] cursor-pointer overflow-hidden"
           >
-            <span>Case Study</span>
+            <span className="relative overflow-hidden block h-3.5 leading-none">
+              <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
+                Case Study
+              </span>
+              <span className="block absolute top-0 left-0 text-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full group-hover/btn:translate-y-0 font-extrabold">
+                Case Study
+              </span>
+            </span>
             <ArrowUpRight className="h-3.5 w-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-300" />
           </button>
         </div>

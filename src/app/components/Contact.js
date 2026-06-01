@@ -145,10 +145,17 @@ export default function Contact() {
                 href="https://wa.me/8801760944167"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full font-bold bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 rounded-xl h-12 shadow-lg shadow-primary/15 hover:shadow-primary/30 transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer text-sm tracking-wide hover:scale-101 active:scale-99 border-0"
+                className="group/btn w-full font-bold bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 rounded-xl h-12 shadow-lg shadow-primary/15 hover:shadow-primary/30 transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer text-sm tracking-wide hover:scale-101 active:scale-99 border-0 overflow-hidden"
               >
                 <MessageCircle className="h-5 w-5" />
-                <span>WhatsApp Connect</span>
+                <span className="relative overflow-hidden block h-4 leading-none">
+                  <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
+                    WhatsApp Connect
+                  </span>
+                  <span className="block absolute top-0 left-0 text-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full group-hover/btn:translate-y-0 font-bold">
+                    WhatsApp Connect
+                  </span>
+                </span>
               </a>
             </div>
           </div>

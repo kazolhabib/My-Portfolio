@@ -271,9 +271,16 @@ export default function Hero() {
                   e.preventDefault();
                   openResume();
                 }}
-                className="group w-full font-bold bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 rounded-2xl h-12 hover:scale-[1.01] active:scale-[0.99] transition-transform duration-350 shadow-lg shadow-primary/15 hover:shadow-primary/30 flex items-center justify-center space-x-2 cursor-pointer text-sm border-0"
+                className="group/btn w-full font-bold bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 rounded-2xl h-12 hover:scale-[1.01] active:scale-[0.99] transition-transform duration-350 shadow-lg shadow-primary/15 hover:shadow-primary/30 flex items-center justify-center space-x-2 cursor-pointer text-sm border-0 overflow-hidden"
               >
-                <span>Resume</span>
+                <span className="relative overflow-hidden block h-4 leading-none">
+                  <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
+                    Resume
+                  </span>
+                  <span className="block absolute top-0 left-0 text-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full group-hover/btn:translate-y-0 font-bold">
+                    Resume
+                  </span>
+                </span>
                 <Download className="h-4 w-4 animate-download-bounce" />
               </button>
 
@@ -282,10 +289,17 @@ export default function Hero() {
                   e.preventDefault();
                   triggerContactHighlight();
                 }}
-                className="lets-talk-pulse group w-full font-bold bg-neutral-100/50 hover:bg-neutral-100 dark:bg-neutral-950/30 dark:hover:bg-neutral-950/60 text-foreground rounded-2xl h-12 transition-all duration-350 flex items-center justify-center space-x-1 cursor-pointer text-sm border-0"
+                className="lets-talk-pulse group/btn w-full font-bold bg-neutral-100/50 hover:bg-neutral-100 dark:bg-neutral-950/30 dark:hover:bg-neutral-950/60 text-foreground rounded-2xl h-12 transition-all duration-350 flex items-center justify-center space-x-1.5 cursor-pointer text-sm border-0 overflow-hidden"
               >
-                <span>Let&apos;s Talk</span>
-                <ArrowUpRight className="h-4 w-4 animate-arrow-bounce group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-350" />
+                <span className="relative overflow-hidden block h-4 leading-none">
+                  <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
+                    Let&apos;s Talk
+                  </span>
+                  <span className="block absolute top-0 left-0 text-primary transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full group-hover/btn:translate-y-0 font-bold">
+                    Let&apos;s Talk
+                  </span>
+                </span>
+                <ArrowUpRight className="h-4 w-4 animate-arrow-bounce group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-350" />
               </button>
             </div>
           </div>

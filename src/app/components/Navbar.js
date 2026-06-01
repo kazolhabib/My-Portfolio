@@ -295,9 +295,16 @@ export default function Navbar() {
               e.preventDefault();
               openResume();
             }}
-            className="font-bold bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 rounded-full px-5 py-2 shadow-md shadow-primary/10 hover:shadow-primary/25 cursor-pointer transition-all duration-300 text-xs tracking-wide border-0"
+            className="group/btn font-bold bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 rounded-full lg:px-3.5 xl:px-5 py-2 shadow-md shadow-primary/10 hover:shadow-primary/25 cursor-pointer transition-all duration-300 text-xs tracking-wide border-0 overflow-hidden flex items-center justify-center"
           >
-            Resume
+            <span className="relative overflow-hidden block h-3.5 leading-none">
+              <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
+                Resume
+              </span>
+              <span className="block absolute top-0 left-0 text-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full group-hover/btn:translate-y-0 font-bold">
+                Resume
+              </span>
+            </span>
           </Button>
         </div>
 
@@ -374,9 +381,16 @@ export default function Navbar() {
                     setIsOpen(false);
                     openResume();
                   }}
-                  className="w-full font-bold bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 rounded-xl py-3.5 flex items-center justify-center space-x-2 border-0"
+                  className="group/btn w-full font-bold bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 rounded-xl py-3.5 flex items-center justify-center space-x-2 border-0 overflow-hidden"
                 >
-                  <span>View Resume</span>
+                  <span className="relative overflow-hidden block h-3.5 leading-none">
+                    <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:-translate-y-full">
+                      View Resume
+                    </span>
+                    <span className="block absolute top-0 left-0 text-white transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full group-hover/btn:translate-y-0 font-bold">
+                      View Resume
+                    </span>
+                  </span>
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </motion.div>
