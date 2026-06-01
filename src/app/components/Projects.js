@@ -284,10 +284,7 @@ export default function Projects() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex items-center space-x-2"
           >
-            <div className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-neutral-100/50 dark:bg-neutral-900/30 border border-border-color/10 text-foreground/45 text-[10px] font-bold uppercase select-none">
-              <Filter className="h-3.5 w-3.5" />
-              <span>Interactive Filters</span>
-            </div>
+            
           </motion.div>
         </div>
 
