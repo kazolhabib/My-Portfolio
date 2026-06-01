@@ -294,7 +294,7 @@
 }
 
 .animate-floating-spin {
-  animation: floating-spin 80s ease-in-out infinite;
+  animation: floating-spin 35s ease-in-out infinite;
 }
 
 /* Premium shine sweep glare animation for screenshots */
