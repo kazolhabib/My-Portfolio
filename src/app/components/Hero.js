@@ -96,45 +96,61 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative w-full py-12 md:py-20 px-6 sm:px-8 lg:px-12 bg-transparent transition-colors duration-350">
-      <div className="mx-auto max-w-[1440px] w-full">
+    <section className="relative w-full py-12 md:py-20 px-6 sm:px-8 lg:px-12 bg-transparent transition-all duration-350 overflow-hidden">
+      {/* Premium Background Mesh and Dot Grid Overlays */}
+      <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
+
+      {/* Floating Radial Neon Lighting Accents */}
+      <div className="absolute -top-60 right-1/4 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px] pointer-events-none z-0 opacity-60 animate-[pulse_8s_infinite_alternate]" />
+      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-emerald-500/5 blur-[120px] pointer-events-none z-0 opacity-40 animate-[pulse_6s_infinite_alternate]" />
+
+      <div className="mx-auto max-w-[1440px] w-full relative z-10">
 
         {/* Bento Grid Layout locked strictly at max-w-1440px */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-auto">
 
           {/* Card 1: Intro Deck (Col span 8, Row span 2) */}
-          <div className="md:col-span-8 p-8 md:p-12 bento-card flex flex-col justify-between min-h-[340px]">
-            <div className="space-y-6">
+          <div className="md:col-span-8 p-8 md:p-12 bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl border-0 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] transition-all duration-600 ease-out hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.05),0_15px_40px_-15px_rgba(5,150,105,0.08)] dark:hover:shadow-[0_35px_70px_rgba(0,0,0,0.65),0_20px_45px_-15px_rgba(16,185,129,0.12)] flex flex-col justify-between min-h-[340px] overflow-hidden group relative">
+            {/* Card Glow & Grid Backdrops */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
+            <div className="absolute inset-0 bg-dot-grid opacity-[0.03] dark:opacity-[0.05] pointer-events-none z-0" />
+
+            <div className="space-y-6 z-10 relative">
               {/* Tech Badge */}
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-primary/5 border border-primary/20 accent-border max-w-fit">
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-primary/8 text-primary max-w-fit shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] backdrop-blur-md z-10 select-none">
                 <span className="text-[10px] sm:text-xs font-bold tracking-wider text-primary uppercase">
                   ✦ Next-Gen Full-Stack Architect
                 </span>
               </div>
 
               {/* Title / Name */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6.5xl font-black tracking-tight text-foreground leading-[1.05]">
                 Hi, I'm{" "}
-                <span className="text-primary hover:opacity-90 transition-opacity duration-300">
+                <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent transition-opacity duration-300">
                   Kazol Habib
                 </span>
               </h1>
 
               {/* Typing Subtitle */}
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-foreground/60 min-h-[30px] flex items-center">
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-foreground/75 min-h-[30px] flex items-center">
                 <span>{typedText}</span>
                 <span className="w-1 h-5 ml-1 bg-primary animate-[pulse_0.9s_infinite] inline-block shrink-0" />
               </h2>
             </div>
 
             {/* Description */}
-            <p className="text-sm sm:text-base text-foreground/70 max-w-xl leading-relaxed mt-6">
-              I fashion highly custom, pixel-perfect digital systems with Next.js & Tailwind CSS. Specializing in award-winning interactive layouts, fast render times, and micro-interactions.
+            <p className="text-sm sm:text-base text-foreground/60 max-w-xl leading-relaxed mt-6 z-10 relative font-normal">
+              I fashion highly custom, pixel-perfect digital systems with Next.js & Tailwind CSS. Specializing in award-winning interactive layouts, fast render times, and secure backend systems with Express, MongoDB, and Better Auth.
             </p>
           </div>
 
           {/* Card 2: Luxurious Asymmetrical Editorial Polaroid Showcase (Col span 4, Row span 2) */}
-          <div className="md:col-span-4 md:row-span-2 p-6 sm:p-8 bento-card flex flex-col items-center justify-between min-h-[480px] sm:min-h-[500px] relative overflow-hidden group/card bg-gradient-to-tr from-card-bg via-card-bg to-neutral-50 dark:to-neutral-950 border border-border-color">
+          <div className="md:col-span-4 md:row-span-2 p-6 sm:p-8 bg-gradient-to-tr from-white/40 via-white/30 to-white/10 dark:from-neutral-900/35 dark:via-neutral-900/20 dark:to-neutral-900/5 backdrop-blur-xl border-0 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] transition-all duration-600 ease-out hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.05),0_15px_40px_-15px_rgba(5,150,105,0.08)] dark:hover:shadow-[0_35px_70px_rgba(0,0,0,0.65),0_20px_45px_-15px_rgba(16,185,129,0.12)] flex flex-col items-center justify-between min-h-[480px] sm:min-h-[500px] relative overflow-hidden group/card">
+            {/* Card Glow & Grid Backdrops */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/[0.02] opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
+            <div className="absolute inset-0 bg-dot-grid opacity-[0.03] dark:opacity-[0.05] pointer-events-none z-0" />
+
             {/* Soft designer lighting bleed behind the stack */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gradient-to-tr from-primary/10 to-amber-500/10 blur-3xl opacity-50 group-hover/card:scale-125 transition-transform duration-1000 pointer-events-none" />
 
@@ -160,7 +176,7 @@ export default function Hero() {
               {/* Main Polaroid Gallery Frame (Centered & Sharp) */}
               <div
                 style={{ transform: "translateZ(15px)" }}
-                className="absolute inset-0 p-3 pb-5 rounded-[2.2rem] bg-white dark:bg-neutral-900 border border-border-color shadow-2xl flex flex-col justify-between group-hover/portrait:border-primary/35 transition-colors duration-500"
+                className="absolute inset-0 p-3 pb-5 rounded-[2.2rem] bg-white dark:bg-neutral-900 border border-border-color/10 shadow-2xl flex flex-col justify-between transition-colors duration-500"
               >
                 {/* Image Container with precise rounded edges */}
                 <div className="relative w-full h-[80%] rounded-[1.6rem] overflow-hidden border border-neutral-100 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950">
@@ -192,41 +208,44 @@ export default function Hero() {
                     <p className="text-[7.5px] sm:text-[8px] font-bold text-foreground/45 uppercase tracking-widest mt-0.5 whitespace-nowrap">EST. 2021</p>
                   </div>
                   <div className="text-right shrink-0">
-                    <p className="text-[8px] sm:text-[9px] font-black text-primary tracking-widest uppercase whitespace-nowrap">// MERN STACK ENGINEER</p>
+                    <p className="text-[8px] sm:text-[9px] font-black text-primary tracking-widest uppercase whitespace-nowrap">// FULL-STACK ENGINEER</p>
                   </div>
                 </div>
               </div>
             </motion.div>
 
             {/* Elegant Premium Designer Subtext / Quote */}
-            <div className="w-full mt-4 px-2 text-center z-10">
+            <div className="w-full mt-4 px-2 text-center z-10 relative">
               <p className="text-[10px] sm:text-xs font-medium text-foreground/50 leading-relaxed italic max-w-[260px] mx-auto">
-                "Expert in crafting premium No-Code & Webflow websites, bridging visual pixel discipline with modern frontend engineering speed."
+                "Expert in crafting premium MERN Stack & Next.js websites, bridging visual pixel discipline with modern full-stack engineering speed."
               </p>
             </div>
 
             {/* Sleek Minimalist Location Indicator Footer */}
-            <div className="w-full mt-5 pt-4 flex items-center justify-between text-[11px] font-bold text-foreground/50 z-10 px-2">
+            <div className="w-full mt-5 pt-4 border-t border-border-color/10 flex items-center justify-between text-[11px] font-bold text-foreground/50 z-10 relative px-2">
               <div className="flex items-center space-x-1.5 text-foreground/75">
                 <MapPin className="h-3.5 w-3.5 text-primary" />
-                <span>Dhaka, Tangail, BD</span>
+                <span>Dhaka, BD</span>
               </div>
-
             </div>
           </div>
 
           {/* Card 3: Tech Stack Deck (Col span 4, Row span 1) */}
-          <div className="md:col-span-4 p-8 bento-card flex flex-col justify-between min-h-[220px]">
-            <div>
+          <div className="md:col-span-4 p-8 bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl border-0 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] transition-all duration-600 ease-out hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.05),0_15px_40px_-15px_rgba(5,150,105,0.08)] dark:hover:shadow-[0_35px_70px_rgba(0,0,0,0.65),0_20px_45px_-15px_rgba(16,185,129,0.12)] flex flex-col justify-between min-h-[220px] overflow-hidden group relative">
+            {/* Card Glow & Grid Backdrops */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
+            <div className="absolute inset-0 bg-dot-grid opacity-[0.03] dark:opacity-[0.05] pointer-events-none z-0" />
+
+            <div className="z-10 relative">
               <h3 className="text-sm font-bold text-foreground/60 uppercase tracking-widest">Capabilities</h3>
               <p className="text-xs text-foreground/45 mt-0.5">Stack & Specialities</p>
             </div>
 
-            <div className="flex flex-wrap gap-2 mt-4">
+            <div className="flex flex-wrap gap-2 mt-4 z-10 relative">
               {TECH_TAGS.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-neutral-100 dark:bg-neutral-900 border border-border-color hover:border-primary hover:scale-102 transition-all duration-200 text-foreground/80 cursor-default"
+                  className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100/80 dark:bg-neutral-950/40 text-foreground/75 border-0 hover:bg-primary/10 hover:text-primary transition-all duration-300 select-none cursor-default shadow-sm"
                 >
                   {tag}
                 </span>
@@ -235,19 +254,23 @@ export default function Hero() {
           </div>
 
           {/* Card 4: CTAs Deck (Col span 4, Row span 1) */}
-          <div className="md:col-span-4 p-8 bento-card flex flex-col justify-between min-h-[220px]">
-            <div>
+          <div className="md:col-span-4 p-8 bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl border-0 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] transition-all duration-600 ease-out hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.05),0_15px_40px_-15px_rgba(5,150,105,0.08)] dark:hover:shadow-[0_35px_70px_rgba(0,0,0,0.65),0_20px_45px_-15px_rgba(16,185,129,0.12)] flex flex-col justify-between min-h-[220px] overflow-hidden group relative">
+            {/* Card Glow & Grid Backdrops */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
+            <div className="absolute inset-0 bg-dot-grid opacity-[0.03] dark:opacity-[0.05] pointer-events-none z-0" />
+
+            <div className="z-10 relative">
               <h3 className="text-sm font-bold text-foreground/60 uppercase tracking-widest">Actions</h3>
               <p className="text-xs text-foreground/45 mt-0.5">Download & Connect</p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-3 mt-6">
+            <div className="flex flex-col sm:flex-row items-center gap-3 mt-6 z-10 relative">
               <button
                 onClick={(e) => {
                   e.preventDefault();
                   openResume();
                 }}
-                className="group w-full font-bold bg-primary text-primary-foreground rounded-xl h-12 hover:scale-[1.01] active:scale-[0.99] transition-transform duration-350 shadow-md shadow-primary/10 flex items-center justify-center space-x-2 cursor-pointer text-sm"
+                className="group w-full font-bold bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 rounded-2xl h-12 hover:scale-[1.01] active:scale-[0.99] transition-transform duration-350 shadow-lg shadow-primary/15 hover:shadow-primary/30 flex items-center justify-center space-x-2 cursor-pointer text-sm border-0"
               >
                 <span>Resume</span>
                 <Download className="h-4 w-4 animate-download-bounce" />
@@ -258,7 +281,7 @@ export default function Hero() {
                   e.preventDefault();
                   triggerContactHighlight();
                 }}
-                className="lets-talk-pulse group w-full font-bold border border-border-color hover:border-primary text-foreground rounded-xl h-12 hover:bg-primary/5 transition-all duration-350 flex items-center justify-center space-x-1 cursor-pointer text-sm"
+                className="lets-talk-pulse group w-full font-bold bg-neutral-100/50 hover:bg-neutral-100 dark:bg-neutral-950/30 dark:hover:bg-neutral-950/60 text-foreground rounded-2xl h-12 transition-all duration-350 flex items-center justify-center space-x-1 cursor-pointer text-sm border-0"
               >
                 <span>Let's Talk</span>
                 <ArrowUpRight className="h-4 w-4 animate-arrow-bounce group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-350" />
@@ -266,8 +289,12 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Card 5: Social Deck (Col span-12 md:col-span-4 p-8 bento-card flex items-center justify-around min-h-[100px]) */}
-          <div className="md:col-span-4 p-8 bento-card flex items-center justify-around min-h-[100px]">
+          {/* Card 5: Social Deck (Col span-12 md:col-span-4 p-8 bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl border-0 rounded-[2.5rem] flex items-center justify-around min-h-[100px] overflow-hidden group relative) */}
+          <div className="md:col-span-4 p-8 bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl border-0 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] transition-all duration-600 ease-out hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.05),0_15px_40px_-15px_rgba(5,150,105,0.08)] dark:hover:shadow-[0_35px_70px_rgba(0,0,0,0.65),0_20px_45px_-15px_rgba(16,185,129,0.12)] flex items-center justify-around min-h-[100px] overflow-hidden group relative">
+            {/* Card Glow & Grid Backdrops */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0" />
+            <div className="absolute inset-0 bg-dot-grid opacity-[0.03] dark:opacity-[0.05] pointer-events-none z-0" />
+
             {[
               { icon: GithubIcon, label: "GitHub", href: "https://github.com/kazolhabib", target: "_blank", rel: "noopener noreferrer" },
               { icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/kazol-habib/", target: "_blank", rel: "noopener noreferrer" },
@@ -290,7 +317,7 @@ export default function Hero() {
                       setTimeout(() => setCopied(false), 2000);
                     }
                   }}
-                  className="relative p-3.5 rounded-xl border border-border-color hover:border-primary text-foreground/60 hover:text-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/5 transition-all duration-350 cursor-pointer"
+                  className="relative p-3.5 rounded-2xl bg-neutral-100/50 hover:bg-neutral-100 dark:bg-neutral-950/30 dark:hover:bg-neutral-950/60 border-0 text-foreground/60 hover:text-primary hover:scale-110 hover:shadow-lg hover:shadow-primary/5 transition-all duration-350 cursor-pointer shadow-sm z-10"
                   aria-label={social.label}
                 >
                   <Icon className="h-5 w-5" />
