@@ -1,8 +1,32 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, useInView, animate } from "framer-motion";
 import { User, Palette, Sparkles, Code } from "lucide-react";
 import InteractiveDotGrid from "./InteractiveDotGrid";
+
+// High-performance Direct-DOM viewport-aware Counter component
+function Counter({ value, suffix = "", duration = 2.2 }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+
+  useEffect(() => {
+    if (inView) {
+      const controls = animate(0, value, {
+        duration: duration,
+        ease: [0.16, 1, 0.3, 1], // Quintic physics ease-out deceleration
+        onUpdate(latest) {
+          if (ref.current) {
+            ref.current.textContent = Math.round(latest) + suffix;
+          }
+        },
+      });
+      return () => controls.stop();
+    }
+  }, [inView, value, suffix, duration]);
+
+  return <span ref={ref}>0{suffix}</span>;
+}
 
 export default function About() {
   return (
@@ -112,28 +136,36 @@ export default function About() {
               <div className="absolute inset-0 bg-dot-grid opacity-[0.03] dark:opacity-[0.05] pointer-events-none z-0" />
 
               <div className="space-y-1 p-4 rounded-2xl bg-neutral-100/50 hover:bg-neutral-100/80 dark:bg-neutral-950/20 dark:hover:bg-neutral-950/40 border-0 transition-all duration-300 shadow-sm hover:scale-102 cursor-default select-none relative z-10">
-                <span className="text-2xl sm:text-3xl font-extrabold text-primary">15+</span>
+                <span className="text-2xl sm:text-3xl font-extrabold text-primary">
+                  <Counter value={15} suffix="+" />
+                </span>
                 <p className="text-[0.625rem] sm:text-xs font-bold text-foreground/50 uppercase tracking-wider">
                   Projects Complete
                 </p>
               </div>
 
               <div className="space-y-1 p-4 rounded-2xl bg-neutral-100/50 hover:bg-neutral-100/80 dark:bg-neutral-950/20 dark:hover:bg-neutral-950/40 border-0 transition-all duration-300 shadow-sm hover:scale-102 cursor-default select-none relative z-10">
-                <span className="text-2xl sm:text-3xl font-extrabold text-primary">100%</span>
+                <span className="text-2xl sm:text-3xl font-extrabold text-primary">
+                  <Counter value={100} suffix="%" />
+                </span>
                 <p className="text-[0.625rem] sm:text-xs font-bold text-foreground/50 uppercase tracking-wider">
                   Client Success
                 </p>
               </div>
 
               <div className="space-y-1 p-4 rounded-2xl bg-neutral-100/50 hover:bg-neutral-100/80 dark:bg-neutral-950/20 dark:hover:bg-neutral-950/40 border-0 transition-all duration-300 shadow-sm hover:scale-102 cursor-default select-none relative z-10">
-                <span className="text-2xl sm:text-3xl font-extrabold text-primary">3+</span>
+                <span className="text-2xl sm:text-3xl font-extrabold text-primary">
+                  <Counter value={3} suffix="+" />
+                </span>
                 <p className="text-[0.625rem] sm:text-xs font-bold text-foreground/50 uppercase tracking-wider">
                   Years Engineering
                 </p>
               </div>
 
               <div className="space-y-1 p-4 rounded-2xl bg-neutral-100/50 hover:bg-neutral-100/80 dark:bg-neutral-950/20 dark:hover:bg-neutral-950/40 border-0 transition-all duration-300 shadow-sm hover:scale-102 cursor-default select-none relative z-10">
-                <span className="text-2xl sm:text-3xl font-extrabold text-primary">24h</span>
+                <span className="text-2xl sm:text-3xl font-extrabold text-primary">
+                  <Counter value={24} suffix="h" />
+                </span>
                 <p className="text-[0.625rem] sm:text-xs font-bold text-foreground/50 uppercase tracking-wider">
                   Avg. Response
                 </p>
