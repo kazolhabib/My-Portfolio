@@ -145,8 +145,8 @@ export default function Skills() {
         {/* Futuristic Tab Console Container */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
           
-          {/* Left Console selector tabs */}
-          <div className="lg:col-span-4 col-span-12 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible scrollbar-none gap-3 pb-3 lg:pb-0 border-b lg:border-b-0 border-border-color/10">
+          {/* Left Console selector tabs - stacks as a 2x2 grid on mobile/tablet, and flexes vertically on desktop */}
+          <div className="lg:col-span-4 col-span-12 grid grid-cols-2 lg:flex lg:flex-col gap-3 w-full border-b lg:border-b-0 border-border-color/10 pb-6 lg:pb-0">
             {SKILL_GROUPS.map((group, idx) => {
               const Icon = group.icon;
               const isActive = activeTab === idx;
@@ -155,11 +155,11 @@ export default function Skills() {
                 <button
                   key={group.id}
                   onClick={() => setActiveTab(idx)}
-                  className={`relative w-full text-left p-4 sm:p-5 rounded-2xl sm:rounded-3xl transition-all duration-350 cursor-pointer border-0 select-none shrink-0 ${
+                  className={`relative w-full text-left p-3.5 sm:p-5 rounded-2xl sm:rounded-3xl transition-all duration-350 cursor-pointer border-0 select-none ${
                     isActive 
                       ? "bg-white/80 dark:bg-neutral-900/70 shadow-lg shadow-primary/5" 
                       : "bg-white/30 dark:bg-neutral-900/20 hover:bg-white/50 dark:hover:bg-neutral-900/40"
-                  } flex items-center justify-between min-w-[200px] sm:min-w-[240px] lg:min-w-0 z-10`}
+                  } flex items-center space-x-2.5 sm:space-x-4 z-10`}
                 >
                   {/* Sliding capsule background */}
                   {isActive && (
@@ -170,35 +170,24 @@ export default function Skills() {
                     />
                   )}
 
-                  <div className="flex items-center space-x-3.5 z-10 relative">
-                    {/* Glass Icon frame */}
-                    <div className={`p-2.5 rounded-xl transition-all duration-350 ${
-                      isActive 
-                        ? "bg-primary text-primary-foreground dark:bg-emerald-600" 
-                        : "bg-white/80 dark:bg-neutral-950/40 text-primary"
-                    }`}>
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    
-                    <div className="flex flex-col text-left">
-                      <span className={`text-sm sm:text-base font-extrabold tracking-tight ${
-                        isActive ? "text-foreground" : "text-foreground/75"
-                      }`}>
-                        {group.title}
-                      </span>
-                      <span className="text-[10px] text-foreground/40 hidden lg:block truncate max-w-[200px] mt-0.5 font-normal">
-                        {group.description}
-                      </span>
-                    </div>
+                  {/* Glass Icon frame with active neon-emerald status glow */}
+                  <div className={`p-2 sm:p-2.5 rounded-lg sm:rounded-xl transition-all duration-350 z-10 shrink-0 ${
+                    isActive 
+                      ? "bg-primary text-primary-foreground dark:bg-emerald-600 shadow-[0_0_12px_rgba(16,185,129,0.4)]" 
+                      : "bg-white/80 dark:bg-neutral-950/40 text-primary"
+                  }`}>
+                    <Icon className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
                   </div>
-
-                  {/* Neon active status Led Dot */}
-                  <div className="flex items-center z-10 relative">
-                    <span className={`h-2 w-2 rounded-full transition-all duration-350 ${
-                      isActive 
-                        ? "bg-primary animate-pulse shadow-[0_0_8px_var(--heroui-primary)] dark:shadow-[0_0_8px_#10b981]" 
-                        : "bg-foreground/15"
-                    }`} />
+                  
+                  <div className="flex flex-col text-left z-10 relative">
+                    <span className={`text-xs sm:text-base font-extrabold tracking-tight ${
+                      isActive ? "text-foreground" : "text-foreground/75"
+                    }`}>
+                      {group.title}
+                    </span>
+                    <span className="text-[10px] text-foreground/40 hidden lg:block truncate max-w-[200px] mt-0.5 font-normal">
+                      {group.description}
+                    </span>
                   </div>
                 </button>
               );
@@ -206,7 +195,7 @@ export default function Skills() {
           </div>
 
           {/* Right Console dynamic dashboard */}
-          <div className="lg:col-span-8 col-span-12">
+          <div className="lg:col-span-8 col-span-12 w-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
@@ -214,7 +203,7 @@ export default function Skills() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="p-6 sm:p-8 bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl border-0 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] relative overflow-hidden group min-h-[400px] text-left"
+                className="p-6 sm:p-8 bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl border-0 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.02)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.4)] relative overflow-hidden group min-h-[400px] text-left w-full"
               >
                 {/* Visual backdrops */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/[0.02] pointer-events-none z-0" />
