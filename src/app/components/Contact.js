@@ -39,6 +39,7 @@ export default function Contact() {
       {/* Premium Background Mesh and Dot Grid Overlays */}
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
       <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
+      <div className="section-backlight" />
 
       {/* Massive Glowing Sinking Radial Neon Accent */}
       <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/8 dark:bg-primary/5 blur-[120px] rounded-full pointer-events-none z-0" />

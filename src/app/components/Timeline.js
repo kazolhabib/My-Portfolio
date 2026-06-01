@@ -40,6 +40,7 @@ export default function Timeline() {
       {/* Premium Background Mesh and Dot Grid Overlays */}
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
       <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
+      <div className="section-backlight" />
 
       <div className="relative z-10 mx-auto max-w-[90rem] w-full">
 

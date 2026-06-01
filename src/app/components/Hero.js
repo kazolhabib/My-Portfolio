@@ -100,6 +100,7 @@ export default function Hero() {
       {/* Premium Background Mesh and Dot Grid Overlays */}
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
       <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
+      <div className="section-backlight" />
 
       {/* Floating Radial Neon Lighting Accents */}
       <div className="absolute -top-60 right-1/4 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px] pointer-events-none z-0 opacity-60 animate-[pulse_8s_infinite_alternate]" />
