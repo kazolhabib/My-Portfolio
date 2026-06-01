@@ -279,3 +279,20 @@
   background: radial-gradient(circle, rgba(16, 185, 129, 0.09) 0%, rgba(5, 150, 105, 0.04) 55%, transparent 75%);
   filter: blur(150px);
 }
+
+/* Premium continuous slow float & spin animation for footer monogram background */
+@keyframes floating-spin {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(25px, -25px) rotate(180deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+.animate-floating-spin {
+  animation: floating-spin 80s ease-in-out infinite;
+}
