@@ -38,15 +38,16 @@ const TIMELINE_ITEMS = [
     type: "education",
     date: "2018 - 2020",
     title: "Bachelor of Social Science (BSS)",
-    subtitle: "Academic Foundation",
-    description: "Studied advanced research methodologies, socio-critical analyses, and human behavioral structures. Directly applied this systemic thinking to UX user-persona modeling, semantic content structures, and clear visual hierarchies.",
+    subtitle: "National University of Bangladesh",
+    description: "Graduated with a brilliant academic record, majoring in Sociology and political-economic structures. Developed a deep, analytical mastery of social research methodologies, systemic behavioral modeling, and logical data architectures. I consistently ranked at the top of my class, combining rigorous academic discipline with data-driven social analysis—skills that now serve as the structural backbone for my complex database modeling and user-centric application designs.",
     icon: GraduationCap,
     highlights: [
-      "Mastered advanced statistical modeling and quantitative research methodologies.",
-      "Mapped systemic user-persona profiles directly utilized in client UX layouts.",
-      "Graduated with honors, bridging quantitative analysis with technical UX systems."
+      "Achieved an outstanding GPA, consistently securing first-class marks throughout the academic program.",
+      "Led a major quantitative socio-economic research thesis, earning top grades for structural data methodology and statistical accuracy.",
+      "Elected as Academic Class Representative, bridging student-faculty communication and coordinating collaborative workshops.",
+      "Bridged quantitative research methods with algorithmic logic, establishing a solid foundation for my transition into engineering."
     ],
-    skills: ["Research", "UX Modeling", "Visual Hierarchy", "Systemic Thinking"],
+    skills: ["Social Research", "Statistical Analysis", "Data Architecture", "Logical Modeling", "Systemic Thinking"],
   },
 ];
 
