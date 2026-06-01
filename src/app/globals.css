@@ -296,3 +296,17 @@
 .animate-floating-spin {
   animation: floating-spin 80s ease-in-out infinite;
 }
+
+/* Premium shine sweep glare animation for screenshots */
+@keyframes shine-sweep {
+  0% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(160%) skewX(-20deg);
+  }
+}
+
+.animate-shine-sweep {
+  animation: shine-sweep 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

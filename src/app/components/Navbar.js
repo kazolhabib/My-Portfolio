@@ -26,13 +26,14 @@ export default function Navbar() {
     setMounted(true);
 
     const handleScroll = () => {
-      if (window.scrollY > 20) {
+      if (window.scrollY > 10) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -120,7 +121,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 bg-transparent ${
         scrolled ? "pt-4 px-4 sm:px-6 md:px-12" : "pt-0 px-0"
       }`}
     >
@@ -128,7 +129,7 @@ export default function Navbar() {
         className={`mx-auto w-full transition-all duration-500 ${
           scrolled
             ? "max-w-[1100px] bg-white/70 dark:bg-neutral-950/60 backdrop-blur-xl border border-border-color/30 rounded-full px-6 sm:px-8 shadow-[0_20px_40px_rgba(0,0,0,0.03)] dark:shadow-[0_25px_50px_rgba(0,0,0,0.35)] h-16"
-            : "max-w-[1440px] px-6 sm:px-8 lg:px-12 bg-transparent border-b border-border-color/5 h-20"
+            : "max-w-[1440px] px-6 sm:px-8 lg:px-12 bg-transparent border-b border-transparent h-20"
         } flex items-center justify-between`}
       >
         {/* Premium Boutique Logo */}

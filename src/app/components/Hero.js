@@ -96,7 +96,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative w-full py-12 md:py-20 px-6 sm:px-8 lg:px-12 bg-transparent transition-all duration-350 overflow-hidden">
+    <section className="relative w-full pt-28 pb-12 md:pt-36 md:pb-20 px-6 sm:px-8 lg:px-12 bg-transparent transition-all duration-350 overflow-hidden">
       {/* Premium Background Mesh and Dot Grid Overlays */}
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
       <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
