@@ -239,14 +239,14 @@
 
 /* Subtle, high-end micro dot grid pattern overlay */
 .bg-dot-grid {
-  background-image: radial-gradient(rgba(5, 150, 105, 0.04) 1px, transparent 1px);
-  background-size: 24px 24px;
-  mask-image: radial-gradient(ellipse at center, black, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 75%);
+  background-image: radial-gradient(rgba(5, 150, 105, 0.09) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at center, black 15%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 15%, transparent 80%);
 }
 
 .dark .bg-dot-grid {
-  background-image: radial-gradient(rgba(16, 185, 129, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(16, 185, 129, 0.12) 1.5px, transparent 1.5px);
 }
 
 /* Premium dynamic breathing backlight spotlights behind sections */

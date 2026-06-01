@@ -45,7 +45,9 @@ export default function Contact() {
 
       {/* Giant Animating Background Watermark Brand Logo */}
       <div className="absolute right-[-140px] md:right-[-100px] top-1/2 -translate-y-1/2 w-[380px] h-[380px] md:w-[500px] md:h-[500px] text-primary/3 dark:text-primary/4 pointer-events-none select-none z-0">
-        <div className="w-full h-full animate-floating-spin">
+        {/* Dedicated Backlight Spotlight behind the logo */}
+        <div className="absolute inset-0 rounded-full bg-primary/10 dark:bg-primary/5 blur-[95px] pointer-events-none z-0 animate-pulse" />
+        <div className="w-full h-full animate-floating-spin relative z-10">
           <svg className="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Outer diamond outline with rounded corners */}
             <path d="M50 8 L92 50 L50 92 L8 50 Z" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
@@ -155,7 +157,7 @@ export default function Contact() {
         {/* Minimal Editorial Footer */}
         <div className="pt-8 border-t border-border-color/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-[10px] sm:text-xs font-semibold text-foreground/40 relative z-10">
           <div>
-            <span>© 2026 Kazol Habib • Bounded layout locked at 90rem</span>
+            <span>© 2026 Kazol Habib. Designing Experiences. Engineering Futures. All rights reserved.</span>
           </div>
           <div className="flex items-center justify-center space-x-1.5 select-none">
             <span>Built with Next.js, HeroUI & Passion</span>
