@@ -27,7 +27,7 @@ const TIMELINE_ITEMS = [
     description: "Built pixel-perfect, high-performance visual solutions. Designed complex Webflow CMS structures, tailored custom interactions, and led user experience testing loops.",
     icon: Briefcase,
     highlights: [
-      "Delivered 25+ high-fidelity pixel-perfect interfaces for corporate agencies globally.",
+      "Delivered 15+ high-fidelity pixel-perfect interfaces for corporate agencies globally.",
       "Engineered complex CMS schemas with custom dynamic filtering loops.",
       "Created highly polished responsive GSAP interaction sequences."
     ],
@@ -58,16 +58,32 @@ export default function Timeline() {
   return (
     <section id="timeline" className="relative w-full py-16 md:py-24 px-6 sm:px-8 lg:px-12 bg-transparent transition-colors duration-350 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10" />
-      
+
       {/* Premium Background Mesh and Dot Grid Overlays */}
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
       <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
       <div className="section-backlight" />
 
+      {/* Giant Animating Background Watermark Brand Logo */}
+      <div className="absolute -left-36 -bottom-36 md:-left-24 md:-bottom-24 w-[380px] h-[380px] md:w-[500px] md:h-[500px] text-primary/3 dark:text-primary/4 pointer-events-none select-none z-0">
+        <div className="w-full h-full animate-floating-spin">
+          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Outer diamond outline with rounded corners */}
+            <path d="M50 8 L92 50 L50 92 L8 50 Z" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+            {/* Stylized monogram lines forming K & H */}
+            <path d="M38 32 V68" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+            <path d="M62 32 V68" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+            <path d="M38 50 H62" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+            <path d="M38 50 L54 34" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+            <path d="M38 50 L54 66" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+          </svg>
+        </div>
+      </div>
+
       <div className="relative z-10 mx-auto max-w-[90rem] w-full">
 
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -90,7 +106,7 @@ export default function Timeline() {
 
         {/* Interactive Stepper Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
-          
+
           {/* Mobile Horizontal Carousel Tabs */}
           <div className="flex lg:hidden overflow-x-auto gap-3 pb-4 scrollbar-none snap-x snap-mandatory z-10 relative">
             {TIMELINE_ITEMS.map((item, idx) => {
@@ -99,11 +115,10 @@ export default function Timeline() {
                 <button
                   key={item.title}
                   onClick={() => setActiveIndex(idx)}
-                  className={`snap-center shrink-0 px-5 py-3 rounded-full text-xs font-extrabold tracking-wider uppercase transition-all duration-300 select-none border-0 cursor-pointer ${
-                    isActive
+                  className={`snap-center shrink-0 px-5 py-3 rounded-full text-xs font-extrabold tracking-wider uppercase transition-all duration-300 select-none border-0 cursor-pointer ${isActive
                       ? "bg-primary text-primary-foreground shadow-lg shadow-primary/15"
                       : "bg-white/40 dark:bg-neutral-900/35 backdrop-blur-xl text-foreground/50 hover:text-foreground border border-border-color/10"
-                  }`}
+                    }`}
                 >
                   {item.date}
                 </button>
@@ -122,11 +137,10 @@ export default function Timeline() {
                 <button
                   key={item.title}
                   onClick={() => setActiveIndex(idx)}
-                  className={`w-full text-left relative pl-9 pr-4 py-5 rounded-2xl transition-all duration-300 select-none group flex items-start space-x-3 cursor-pointer border-0 ${
-                    isActive 
-                      ? "text-primary" 
+                  className={`w-full text-left relative pl-9 pr-4 py-5 rounded-2xl transition-all duration-300 select-none group flex items-start space-x-3 cursor-pointer border-0 ${isActive
+                      ? "text-primary"
                       : "text-foreground/50 hover:text-foreground/75"
-                  }`}
+                    }`}
                 >
                   {/* Active year capsule sliding background */}
                   {isActive && (
@@ -140,20 +154,19 @@ export default function Timeline() {
                   {/* Node dot on the track */}
                   <div className="absolute left-[20px] top-[26px] -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-white dark:bg-neutral-900 border-2 border-neutral-300 dark:border-neutral-700 group-hover:border-primary transition-all duration-300 z-10 flex items-center justify-center">
                     {isActive && (
-                      <motion.div 
+                      <motion.div
                         layoutId="activeDot"
-                        className="w-1.5 h-1.5 rounded-full bg-primary" 
+                        className="w-1.5 h-1.5 rounded-full bg-primary"
                         transition={{ type: "spring", stiffness: 300, damping: 25 }}
                       />
                     )}
                   </div>
 
                   <div className="space-y-1 relative z-10">
-                    <span className={`inline-block text-[10px] font-bold px-2.5 py-1 rounded-xl leading-none ${
-                      isActive 
-                        ? "bg-primary/10 text-primary" 
+                    <span className={`inline-block text-[10px] font-bold px-2.5 py-1 rounded-xl leading-none ${isActive
+                        ? "bg-primary/10 text-primary"
                         : "bg-neutral-100 dark:bg-neutral-950 text-foreground/45"
-                    }`}>
+                      }`}>
                       {item.date}
                     </span>
                     <h4 className="text-sm sm:text-base font-extrabold tracking-tight block">
