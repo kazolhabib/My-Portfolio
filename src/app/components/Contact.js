@@ -45,17 +45,19 @@ export default function Contact() {
       <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/8 dark:bg-primary/5 blur-[120px] rounded-full pointer-events-none z-0" />
 
       {/* Giant Animating Background Watermark Brand Logo */}
-      <div className="absolute -right-36 -bottom-36 md:-right-24 md:-bottom-24 w-[380px] h-[380px] md:w-[500px] md:h-[500px] text-primary/3 dark:text-primary/4 pointer-events-none select-none z-0 animate-floating-spin">
-        <svg className="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Outer diamond outline with rounded corners */}
-          <path d="M50 8 L92 50 L50 92 L8 50 Z" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-          {/* Stylized monogram lines forming K & H */}
-          <path d="M38 32 V68" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
-          <path d="M62 32 V68" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
-          <path d="M38 50 H62" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
-          <path d="M38 50 L54 34" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
-          <path d="M38 50 L54 66" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
-        </svg>
+      <div className="absolute right-[-140px] md:right-[-100px] top-1/2 -translate-y-1/2 w-[380px] h-[380px] md:w-[500px] md:h-[500px] text-primary/3 dark:text-primary/4 pointer-events-none select-none z-0">
+        <div className="w-full h-full animate-floating-spin">
+          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Outer diamond outline with rounded corners */}
+            <path d="M50 8 L92 50 L50 92 L8 50 Z" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+            {/* Stylized monogram lines forming K & H */}
+            <path d="M38 32 V68" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+            <path d="M62 32 V68" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+            <path d="M38 50 H62" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+            <path d="M38 50 L54 34" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+            <path d="M38 50 L54 66" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+          </svg>
+        </div>
       </div>
 
       <div className="mx-auto max-w-[90rem] w-full space-y-16 relative z-10">
