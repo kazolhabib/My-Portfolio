@@ -48,7 +48,7 @@ export default function Navbar() {
     switch (label) {
       case "Home":
         return (
-          <div className="w-full h-full flex flex-col justify-between p-2 bg-neutral-100/50 dark:bg-neutral-950/40 relative">
+          <div className="w-full h-full flex flex-col justify-between p-2 bg-gradient-to-br from-neutral-50/80 to-white/90 dark:from-neutral-950/60 dark:to-neutral-900/60 relative">
             <div className="flex items-center space-x-1">
               <div className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
               <div className="w-8 h-1 bg-foreground/10 rounded" />
@@ -65,51 +65,79 @@ export default function Navbar() {
         );
       case "About":
         return (
-          <div className="w-full h-full flex flex-col justify-between p-2 bg-neutral-100/50 dark:bg-neutral-950/40 relative">
-            <div className="space-y-1">
-              <div className="w-12 h-1 bg-foreground/25 rounded" />
-              <div className="w-16 h-0.5 bg-foreground/15 rounded" />
-              <div className="w-14 h-0.5 bg-foreground/15 rounded" />
-            </div>
-            <div className="flex items-center space-x-1 text-[8px] text-primary">
-              <span className="w-1 h-1 rounded-full bg-primary" />
-              <span className="text-[4.5px] font-extrabold tracking-wider uppercase leading-none">Biography</span>
+          <div className="w-full h-full flex items-center p-2.5 bg-gradient-to-br from-neutral-50/90 to-white/95 dark:from-neutral-950/70 dark:to-neutral-900/70 relative">
+            <div className="flex items-center space-x-2.5 w-full">
+              {/* Profile Ring Avatar Mock */}
+              <div className="w-8.5 h-8.5 rounded-full bg-gradient-to-tr from-primary via-emerald-500 to-teal-400 p-[1.5px] shadow-[0_4px_12px_rgba(16,185,129,0.25)] shrink-0 flex items-center justify-center overflow-hidden">
+                <div className="w-full h-full rounded-full bg-white dark:bg-neutral-900 flex items-center justify-center">
+                  <span className="text-[9px] font-black text-primary leading-none">KH</span>
+                </div>
+              </div>
+              <div className="flex-grow flex flex-col space-y-0.5 overflow-hidden">
+                <div className="w-10 h-1.5 bg-foreground/25 rounded-full" />
+                <div className="w-14 h-1 bg-foreground/10 rounded-full" />
+                <div className="flex items-center space-x-1 mt-0.5">
+                  <span className="w-1 h-1 rounded-full bg-emerald-500 animate-ping" />
+                  <span className="text-[4.5px] font-extrabold uppercase tracking-[0.18em] text-primary leading-none">Biography</span>
+                </div>
+              </div>
             </div>
           </div>
         );
       case "Skills":
         return (
-          <div className="w-full h-full flex items-center justify-center p-2 bg-neutral-100/50 dark:bg-neutral-950/40 relative">
-            <div className="grid grid-cols-2 gap-0.5 w-full">
-              <div className="h-4 rounded bg-primary/10 border border-primary/20 flex items-center justify-center text-[5px] font-bold text-primary uppercase select-none leading-none">Next</div>
-              <div className="h-4 rounded bg-foreground/5 flex items-center justify-center text-[5px] font-bold uppercase select-none leading-none">Auth</div>
-              <div className="h-4 rounded bg-foreground/5 flex items-center justify-center text-[5px] font-bold uppercase select-none leading-none">Express</div>
-              <div className="h-4 rounded bg-foreground/5 flex items-center justify-center text-[5px] font-bold uppercase select-none leading-none">Mongo</div>
+          <div className="w-full h-full flex flex-col justify-between p-2.5 bg-gradient-to-br from-neutral-50/90 to-white/95 dark:from-neutral-950/70 dark:to-neutral-900/70 relative">
+            <div className="flex items-center justify-between w-full">
+              <span className="text-[6px] font-extrabold tracking-[0.16em] text-foreground/45 uppercase select-none">System Architecture</span>
+              <div className="flex space-x-0.5">
+                <div className="w-1 h-1 rounded-full bg-red-400/80 animate-pulse" />
+                <div className="w-1 h-1 rounded-full bg-emerald-400/80" />
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-1 w-full mt-1.5">
+              <div className="h-4.5 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-[5px] font-black text-primary uppercase select-none leading-none shadow-sm shadow-primary/5">NJS</div>
+              <div className="h-4.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-[5px] font-black text-emerald-500 uppercase select-none leading-none shadow-sm shadow-emerald-500/5">RJS</div>
+              <div className="h-4.5 rounded-lg bg-foreground/5 border border-border-color/5 flex items-center justify-center text-[5px] font-black text-foreground/60 uppercase select-none leading-none">MDB</div>
             </div>
           </div>
         );
       case "Projects":
         return (
-          <div className="w-full h-full flex flex-col justify-between p-2 bg-neutral-100/50 dark:bg-neutral-950/40 relative">
-            <div className="w-full h-[72%] rounded bg-white dark:bg-neutral-900 border border-border-color/10 flex flex-col overflow-hidden shadow-sm">
-              <div className="h-1 bg-neutral-50 dark:bg-neutral-950 shrink-0 border-b border-border-color/5 flex items-center px-0.5 space-x-0.5">
-                <div className="w-0.5 h-0.5 rounded-full bg-red-400/80" />
-                <div className="w-0.5 h-0.5 rounded-full bg-emerald-400/80" />
+          <div className="w-full h-full flex flex-col justify-between p-2 bg-gradient-to-br from-neutral-50/90 to-white/95 dark:from-neutral-950/70 dark:to-neutral-900/70 relative">
+            <div className="w-full h-[88%] rounded-xl bg-white dark:bg-neutral-900 border border-border-color/10 flex flex-col overflow-hidden shadow-md relative">
+              {/* Top Browser Control */}
+              <div className="h-2 bg-neutral-100 dark:bg-neutral-950 border-b border-border-color/5 shrink-0 flex items-center px-1 space-x-0.5">
+                <div className="w-[3px] h-[3px] rounded-full bg-red-400/80" />
+                <div className="w-[3px] h-[3px] rounded-full bg-emerald-400/80" />
               </div>
-              <div className="flex-grow bg-primary/10 relative flex items-center justify-center">
-                <span className="text-[5px] text-primary font-black tracking-wider uppercase leading-none">Case Study</span>
+              {/* Project Preview with dynamic layout grid */}
+              <div className="flex-grow p-1.5 flex items-center justify-between relative bg-primary/[0.02]">
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-emerald-500/10 opacity-60 z-0" />
+                <div className="flex flex-col space-y-0.5 z-10">
+                  <div className="w-9 h-1.5 bg-foreground/30 rounded-full" />
+                  <div className="w-6 h-0.5 bg-foreground/15 rounded-full" />
+                </div>
+                <div className="w-6.5 h-6.5 rounded-lg bg-primary/20 dark:bg-emerald-500/20 border border-primary/20 dark:border-emerald-500/30 shadow-inner flex items-center justify-center z-10 animate-[pulse_2s_infinite_alternate]">
+                  <span className="text-[7.5px] text-primary dark:text-emerald-400">⚡</span>
+                </div>
               </div>
             </div>
-            <div className="w-10 h-0.5 bg-foreground/15 rounded self-start mt-0.5" />
           </div>
         );
       case "Contact":
         return (
-          <div className="w-full h-full flex items-center justify-center p-2 bg-neutral-100/50 dark:bg-neutral-950/40 relative">
-            <div className="flex flex-col items-center space-y-1">
-              <div className="text-primary animate-pulse text-xs leading-none">✉</div>
-              <div className="w-14 h-2 bg-primary/10 rounded-full border border-primary/20 flex items-center justify-center">
-                <span className="text-[4px] text-primary font-extrabold tracking-widest uppercase leading-none">Let&apos;s talk</span>
+          <div className="w-full h-full flex flex-col justify-between p-2.5 bg-gradient-to-br from-neutral-50/90 to-white/95 dark:from-neutral-950/70 dark:to-neutral-900/70 relative">
+            <div className="flex items-center justify-between w-full select-none">
+              <span className="text-[6px] font-extrabold tracking-[0.16em] text-foreground/45 uppercase">Secure Gateway</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            </div>
+            <div className="flex items-center space-x-2 mt-1 w-full">
+              <div className="w-7 h-7 rounded-xl bg-primary/15 dark:bg-primary/25 border border-primary/20 flex items-center justify-center shadow-inner shrink-0 relative">
+                <span className="text-[11px] text-primary leading-none animate-[bounce_1.5s_infinite]">✉</span>
+              </div>
+              <div className="flex flex-col space-y-0.5 overflow-hidden">
+                <span className="text-[5.5px] font-black text-foreground/80 tracking-widest uppercase leading-none">LET&apos;S TALK</span>
+                <span className="text-[4.5px] font-bold text-primary tracking-wider uppercase leading-none">Instant Ping</span>
               </div>
             </div>
           </div>
