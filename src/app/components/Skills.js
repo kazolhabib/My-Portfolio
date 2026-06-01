@@ -53,13 +53,13 @@ const cardVariants = {
 const badgeVariants = {
   initial: { y: 0, scale: 1 },
   hover: (index) => ({
-    y: [0, -6, 0],
-    scale: [1, 1.08, 1],
+    y: -6,
+    scale: 1.04,
     transition: {
       type: "spring",
-      stiffness: 300,
-      damping: 13,
-      delay: index * 0.045,
+      stiffness: 260,
+      damping: 15,
+      delay: index * 0.04,
     }
   })
 };
