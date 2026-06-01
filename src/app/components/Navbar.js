@@ -177,33 +177,46 @@ export default function Navbar() {
                   triggerContactHighlight();
                 }
               }}
-              className="relative text-[10px] sm:text-[11px] font-extrabold tracking-[0.18em] uppercase text-foreground/75 hover:text-primary transition-all duration-300 px-4 py-2 rounded-full select-none cursor-pointer"
+              className="group relative text-[10px] sm:text-[11px] font-extrabold tracking-[0.18em] uppercase text-foreground/75 px-4 py-2.5 rounded-full select-none cursor-pointer overflow-visible transition-colors duration-300"
             >
-              <span className="relative z-10">{link.label}</span>
+              {/* Double-text vertical slide reveal */}
+              <span className="relative z-10 overflow-hidden block h-3 sm:h-3.5 leading-none">
+                <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
+                  {link.label}
+                </span>
+                <span className="block absolute top-0 left-0 text-primary transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full group-hover:translate-y-0">
+                  {link.label}
+                </span>
+              </span>
               
-              {/* Sliding Background Capsule */}
+              {/* Sliding Background Glass Capsule */}
               {hoveredIndex === idx && (
                 <motion.span
                   layoutId="nav-hover-bg"
-                  className="absolute inset-0 bg-primary/8 dark:bg-primary/10 rounded-full z-0"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 bg-neutral-100/85 dark:bg-neutral-900/60 border border-neutral-200/40 dark:border-white/[0.04] shadow-[0_4px_16px_rgba(0,0,0,0.015)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.3)] rounded-full z-0"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 380, damping: 28 }}
                 />
               )}
 
-              {/* Hover Section Micro-Thumbnail Preview */}
+              {/* Hover Section Micro-Thumbnail Preview Tooltip */}
               <AnimatePresence>
                 {hoveredIndex === idx && (
                   <motion.div
                     initial={{ opacity: 0, y: -12, scale: 0.85 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -12, scale: 0.85 }}
-                    transition={{ type: "spring", damping: 16, stiffness: 220 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-28 h-16 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md rounded-xl shadow-2xl border border-border-color/30 overflow-hidden pointer-events-none z-50 flex items-center justify-center"
+                    transition={{ type: "spring", damping: 18, stiffness: 220 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4.5 w-28 h-16 bg-white/95 dark:bg-neutral-950/95 backdrop-blur-md rounded-xl shadow-[0_15px_35px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_45px_rgba(0,0,0,0.5)] border border-primary/20 dark:border-emerald-500/20 overflow-visible pointer-events-none z-50 flex items-center justify-center"
                   >
-                    {renderThumbnail(link.label)}
+                    {/* Tooltip Caret Pointer */}
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-2 h-2 rotate-45 bg-white dark:bg-neutral-950 border-t border-l border-primary/20 dark:border-emerald-500/20 -mb-1 z-0" />
+                    
+                    <div className="w-full h-full rounded-xl overflow-hidden relative z-10">
+                      {renderThumbnail(link.label)}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
