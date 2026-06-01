@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { User, Palette, Sparkles, Code } from "lucide-react";
+import InteractiveDotGrid from "./InteractiveDotGrid";
 
 export default function About() {
   return (
@@ -9,7 +10,7 @@ export default function About() {
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10" />
       {/* Premium Background Mesh and Dot Grid Overlays */}
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
+      <InteractiveDotGrid />
       <div className="section-backlight" />
 
       <div className="relative z-10 mx-auto max-w-[90rem] w-full">

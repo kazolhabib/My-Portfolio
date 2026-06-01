@@ -6,6 +6,7 @@ import { FolderGit2, ArrowUpRight, Layers, Video, Sparkles, TrendingUp, Heart, C
 import Image from "next/image";
 import { PROJECTS } from "../data/projects";
 import ProjectDetailsModal from "./ProjectDetailsModal";
+import InteractiveDotGrid from "./InteractiveDotGrid";
 
 // Dynamic branding configuration mapping for custom card themes
 const BRAND_THEMES = {
@@ -245,7 +246,7 @@ export default function Projects() {
 
       {/* Premium Background Mesh and Dot Grid Overlays */}
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
+      <InteractiveDotGrid />
 
       {/* Floating Radial Neon Lighting Accents */}
       <div className="absolute -top-40 left-1/4 w-[400px] h-[400px] rounded-full bg-primary/8 dark:bg-primary/5 blur-[120px] pointer-events-none z-0 animate-[pulse_6s_infinite_alternate]" />

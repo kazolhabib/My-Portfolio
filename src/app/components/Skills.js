@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cpu, Terminal, Compass, Layers, ShieldCheck } from "lucide-react";
+import InteractiveDotGrid from "./InteractiveDotGrid";
 
 const SKILL_GROUPS = [
   {
@@ -112,7 +113,7 @@ export default function Skills() {
       
       {/* Premium Background Mesh and Dot Grid Overlays */}
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
+      <InteractiveDotGrid />
       
       {/* Ambient Neon Background Glows */}
       <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] rounded-full bg-primary/5 blur-[120px] pointer-events-none z-0 opacity-40 animate-[pulse_8s_infinite_alternate]" />

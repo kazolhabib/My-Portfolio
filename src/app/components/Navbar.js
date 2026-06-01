@@ -23,7 +23,7 @@ export default function Navbar() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   useEffect(() => {
-    setMounted(true);
+    setTimeout(() => setMounted(true), 0);
 
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -109,7 +109,7 @@ export default function Navbar() {
             <div className="flex flex-col items-center space-y-1">
               <div className="text-primary animate-pulse text-xs leading-none">✉</div>
               <div className="w-14 h-2 bg-primary/10 rounded-full border border-primary/20 flex items-center justify-center">
-                <span className="text-[4px] text-primary font-extrabold tracking-widest uppercase leading-none">Let's talk</span>
+                <span className="text-[4px] text-primary font-extrabold tracking-widest uppercase leading-none">Let&apos;s talk</span>
               </div>
             </div>
           </div>
@@ -177,7 +177,7 @@ export default function Navbar() {
                   triggerContactHighlight();
                 }
               }}
-              className="relative text-xs sm:text-sm font-semibold tracking-wide text-foreground/75 hover:text-primary transition-colors duration-300 px-4 py-2 rounded-full select-none cursor-pointer"
+              className="relative text-[10px] sm:text-[11px] font-extrabold tracking-[0.18em] uppercase text-foreground/75 hover:text-primary transition-all duration-300 px-4 py-2 rounded-full select-none cursor-pointer"
             >
               <span className="relative z-10">{link.label}</span>
               
@@ -311,7 +311,7 @@ export default function Navbar() {
                       triggerContactHighlight();
                     }
                   }}
-                  className="text-base font-semibold text-foreground/80 hover:text-primary py-1 transition-colors duration-200"
+                  className="text-xs font-extrabold tracking-[0.18em] uppercase text-foreground/80 hover:text-primary py-2.5 transition-colors duration-200"
                 >
                   {link.label}
                 </motion.a>

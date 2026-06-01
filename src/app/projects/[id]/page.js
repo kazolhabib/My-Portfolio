@@ -113,7 +113,7 @@ export default async function ProjectDetailsPage({ params }) {
             </div>
 
             <div className="text-[11px] text-foreground/40 mt-6 font-mono">
-              // Resolved via architecture optimizations
+              {"// Resolved via architecture optimizations"}
             </div>
           </div>
 
@@ -130,7 +130,7 @@ export default async function ProjectDetailsPage({ params }) {
             </div>
 
             <div className="text-[11px] text-primary/60 mt-6 font-mono">
-              // Roadmap scale objectives
+              {"// Roadmap scale objectives"}
             </div>
           </div>
 

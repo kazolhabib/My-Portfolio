@@ -20,7 +20,7 @@ export default function SourceCodeButton({ project, className = "" }) {
   const isWebflow = project.id !== "pethaven";
 
   useEffect(() => {
-    setMounted(true);
+    setTimeout(() => setMounted(true), 0);
   }, []);
 
   useEffect(() => {
@@ -94,7 +94,7 @@ export default function SourceCodeButton({ project, className = "" }) {
                         </div>
                         
                         <p className="text-xs text-neutral-300 leading-relaxed font-normal pt-1">
-                          This premium showcase was custom-designed and visually built utilizing <strong className="text-emerald-400 font-semibold">Webflow's visual engine</strong>. 
+                          This premium showcase was custom-designed and visually built utilizing <strong className="text-emerald-400 font-semibold">Webflow&apos;s visual engine</strong>. 
                         </p>
                         <p className="text-[0.6875rem] text-neutral-400 leading-relaxed font-light">
                           Since it was constructed directly inside Webflow, there is no traditional public code repository available. We invite you to experience its full responsive design by clicking <strong className="text-white">Live Preview</strong>!

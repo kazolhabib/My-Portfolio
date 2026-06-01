@@ -6,6 +6,7 @@ import { Button } from "@heroui/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useResumeModal } from "../providers";
+import InteractiveDotGrid from "./InteractiveDotGrid";
 
 // Modern custom inline brand SVGs
 const GithubIcon = (props) => (
@@ -99,7 +100,7 @@ export default function Hero() {
     <section className="relative w-full pt-28 pb-12 md:pt-36 md:pb-20 px-6 sm:px-8 lg:px-12 bg-transparent transition-all duration-350 overflow-hidden">
       {/* Premium Background Mesh and Dot Grid Overlays */}
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
+      <InteractiveDotGrid />
 
       {/* Floating Radial Neon Lighting Accents */}
       <div className="absolute -top-60 right-1/4 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px] pointer-events-none z-0 opacity-60 animate-[pulse_8s_infinite_alternate]" />
@@ -126,7 +127,7 @@ export default function Hero() {
 
               {/* Title / Name */}
               <h1 className="text-4xl sm:text-5xl lg:text-6.5xl font-black tracking-tight text-foreground leading-[1.05]">
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
                 <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent transition-opacity duration-300">
                   Kazol Habib
                 </span>
@@ -208,7 +209,7 @@ export default function Hero() {
                     <p className="text-[7.5px] sm:text-[8px] font-bold text-foreground/45 uppercase tracking-widest mt-0.5 whitespace-nowrap">EST. 2021</p>
                   </div>
                   <div className="text-right shrink-0">
-                    <p className="text-[8px] sm:text-[9px] font-black text-primary tracking-widest uppercase whitespace-nowrap">// FULL-STACK ENGINEER</p>
+                    <p className="text-[8px] sm:text-[9px] font-black text-primary tracking-widest uppercase whitespace-nowrap">{"// FULL-STACK ENGINEER"}</p>
                   </div>
                 </div>
               </div>
@@ -217,7 +218,7 @@ export default function Hero() {
             {/* Elegant Premium Designer Subtext / Quote */}
             <div className="w-full mt-4 px-2 text-center z-10 relative">
               <p className="text-[10px] sm:text-xs font-medium text-foreground/50 leading-relaxed italic max-w-[260px] mx-auto">
-                "Expert in crafting premium MERN Stack & Next.js websites, bridging visual pixel discipline with modern full-stack engineering speed."
+                &ldquo;Expert in crafting premium MERN Stack & Next.js websites, bridging visual pixel discipline with modern full-stack engineering speed.&rdquo;
               </p>
             </div>
 
@@ -283,7 +284,7 @@ export default function Hero() {
                 }}
                 className="lets-talk-pulse group w-full font-bold bg-neutral-100/50 hover:bg-neutral-100 dark:bg-neutral-950/30 dark:hover:bg-neutral-950/60 text-foreground rounded-2xl h-12 transition-all duration-350 flex items-center justify-center space-x-1 cursor-pointer text-sm border-0"
               >
-                <span>Let's Talk</span>
+                <span>Let&apos;s Talk</span>
                 <ArrowUpRight className="h-4 w-4 animate-arrow-bounce group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-350" />
               </button>
             </div>

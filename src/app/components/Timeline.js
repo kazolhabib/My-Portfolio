@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Briefcase, Calendar, GraduationCap } from "lucide-react";
+import InteractiveDotGrid from "./InteractiveDotGrid";
 
 const TIMELINE_ITEMS = [
   {
@@ -61,7 +62,7 @@ export default function Timeline() {
 
       {/* Premium Background Mesh and Dot Grid Overlays */}
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
+      <InteractiveDotGrid />
       <div className="section-backlight" />
 
       {/* Giant Animating Background Watermark Brand Logo */}

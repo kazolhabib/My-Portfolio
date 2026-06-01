@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, MessageCircle, ArrowRight, Heart, X } from "lucide-react";
+import InteractiveDotGrid from "./InteractiveDotGrid";
 import { Button } from "@heroui/react";
 import { useResumeModal } from "../providers";
 
@@ -13,7 +14,7 @@ export default function Contact() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    setTimeout(() => setMounted(true), 0);
   }, []);
 
   useEffect(() => {
@@ -38,7 +39,7 @@ export default function Contact() {
 
       {/* Premium Background Mesh and Dot Grid Overlays */}
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
+      <InteractiveDotGrid />
 
       {/* Massive Glowing Sinking Radial Neon Accent */}
       <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/8 dark:bg-primary/5 blur-[120px] rounded-full pointer-events-none z-0" />
@@ -86,11 +87,11 @@ export default function Contact() {
             </div>
 
             <h2 className="text-4.5xl sm:text-5xl lg:text-6.5xl font-black tracking-tight text-foreground leading-[1.05] max-w-2xl">
-              Let's build something <br />
+              Let&apos;s build something <br />
               <span className="bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">exceptional</span> together.
             </h2>
             <p className="text-sm sm:text-base text-foreground/60 max-w-lg leading-relaxed mx-auto lg:mx-0 font-normal">
-              Whether you need an optimized React application, a highly-converting Webflow landing page, or architectural guidance on web performance, I am always ready to collaborate. Let's connect!
+              Whether you need an optimized React application, a highly-converting Webflow landing page, or architectural guidance on web performance, I am always ready to collaborate. Let&apos;s connect!
             </p>
           </motion.div>
 

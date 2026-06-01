@@ -234,7 +234,7 @@ export default function ProjectDetailsModal({ isOpen, project, onClose }) {
                       {project.challenges}
                     </p>
                   </div>
-                  <div className="text-[10px] text-red-500/55 font-mono pt-2 select-none">// Resolved via architectural design hooks</div>
+                  <div className="text-[10px] text-red-500/55 font-mono pt-2 select-none">{"// Resolved via architectural design hooks"}</div>
                 </div>
 
                 {/* Improvements Block */}
@@ -251,7 +251,7 @@ export default function ProjectDetailsModal({ isOpen, project, onClose }) {
                       {project.improvements}
                     </p>
                   </div>
-                  <div className={`text-[10px] ${theme.textAccent} opacity-60 font-mono pt-2 select-none`}>// Planned optimization targets</div>
+                  <div className={`text-[10px] ${theme.textAccent} opacity-60 font-mono pt-2 select-none`}>{"// Planned optimization targets"}</div>
                 </div>
 
               </div>

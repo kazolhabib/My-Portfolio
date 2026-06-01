@@ -50,7 +50,7 @@ export function Providers({ children }) {
 
   // Prevent hydration mismatch by waiting until mounted
   useEffect(() => {
-    setMounted(true);
+    setTimeout(() => setMounted(true), 0);
   }, []);
 
   if (!mounted) {
