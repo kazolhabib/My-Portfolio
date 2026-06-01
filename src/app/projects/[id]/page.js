@@ -83,20 +83,19 @@ export default async function ProjectDetailsPage({ params }) {
             </div>
 
             <div className="space-y-3.5 mt-8">
-              <Button
-                as="a"
+              <a
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full font-bold bg-primary text-primary-foreground rounded-xl py-5.5 hover:scale-102 transition-transform duration-350 shadow-md shadow-primary/10 flex items-center justify-center space-x-2 cursor-pointer"
+                className="w-full font-bold bg-primary text-primary-foreground rounded-xl h-12 shadow-md shadow-primary/10 flex items-center justify-center space-x-2 cursor-pointer hover:scale-[1.01] active:scale-[0.99] transition-all duration-350 text-sm"
               >
                 <span>Live Preview</span>
                 <ExternalLink className="h-4 w-4" />
-              </Button>
+              </a>
 
               <SourceCodeButton
                 project={project}
-                className="w-full font-bold border-border-color hover:border-primary text-foreground rounded-xl py-5.5 hover:bg-primary/5 transition-all duration-350 flex items-center justify-center space-x-2 cursor-pointer"
+                className="w-full font-bold border border-border-color hover:border-primary text-foreground rounded-xl h-12 hover:bg-primary/5 transition-all duration-350 flex items-center justify-center space-x-2 cursor-pointer text-sm"
               />
             </div>
           </div>

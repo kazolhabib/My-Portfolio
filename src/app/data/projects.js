@@ -65,19 +65,6 @@ export const PROJECTS = [
     image: "/adsbyjoris-showcase.png"
   },
   {
-    id: "trez",
-    title: "Trez Small Business Payroll",
-    category: "FinTech & Full-Stack",
-    short: "Affordable payroll, benefits, and tax compliance portal for modern SMBs.",
-    description: "Trez is a highly secure, all-in-one payroll and employee benefits administration portal engineered for small businesses and accountants. Automatically handles federal/state payroll tax filings, worker compensation insurance, retirement plans, and compliant direct deposits in just a few clicks.",
-    tech: ["React.js", "Node.js", "PostgreSQL", "Hubspot API", "Tax Filing APIs", "Better Auth"],
-    challenges: "Enforcing strict zero-tolerance security rules around employee financial payroll data and ensuring transaction-level consistency during simultaneous nationwide deposit payouts.",
-    improvements: "Support localized international payroll distributions and implement multi-currency conversion mechanisms.",
-    live: "https://www.trez.co/",
-    github: "https://github.com/kazolhabib/trez-payroll-saas",
-    image: "/trez-showcase.png"
-  },
-  {
     id: "pethaven",
     title: "PetHaven Pet Adoption Platform",
     category: "Full-Stack Development",

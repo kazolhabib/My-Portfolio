@@ -36,12 +36,12 @@ export default function ProjectDetailsModal({ isOpen, project, onClose }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 15 }}
             transition={{ type: "spring", damping: 26, stiffness: 210 }}
-            className="relative bg-card-bg border border-border-color rounded-[24px] md:rounded-[32px] w-full max-w-[1100px] h-[85vh] max-h-[780px] flex flex-col overflow-hidden shadow-2xl z-10"
+            className="relative bg-white/95 dark:bg-neutral-950/95 backdrop-blur-2xl rounded-[2.5rem] w-full max-w-[68.75rem] h-[85vh] max-h-[48.75rem] flex flex-col overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.15)] dark:shadow-[0_45px_90px_rgba(0,0,0,0.6)] z-10"
           >
             {/* Modal Header */}
-            <div className="flex h-16 shrink-0 items-center justify-between px-6 border-b border-border-color bg-background/25 backdrop-blur-sm">
+            <div className="flex h-16 shrink-0 items-center justify-between px-8 border-b border-border-color/10 bg-background/5 backdrop-blur-md">
               <div className="flex items-center space-x-2.5">
-                <div className="p-1.5 rounded-lg bg-primary/10 border border-primary/25 text-primary">
+                <div className="p-2 rounded-xl bg-primary/10 text-primary">
                   <FolderGit2 className="h-4.5 w-4.5" />
                 </div>
                 <span className="text-xs sm:text-sm font-bold tracking-tight text-foreground/90 uppercase">
@@ -52,7 +52,7 @@ export default function ProjectDetailsModal({ isOpen, project, onClose }) {
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="p-1.5 rounded-xl border border-border-color hover:border-primary text-foreground/60 hover:text-primary transition-all duration-200 cursor-pointer w-9 h-9 flex items-center justify-center bg-neutral-100/60 dark:bg-neutral-900/60 hover:bg-primary/5 dark:hover:bg-primary/10"
+                className="p-1.5 rounded-full hover:scale-105 hover:bg-neutral-100 dark:hover:bg-neutral-900 text-foreground/60 hover:text-primary transition-all duration-200 cursor-pointer w-9 h-9 flex items-center justify-center bg-transparent"
                 aria-label="Close Modal"
               >
                 <X className="h-4.5 w-4.5" />
@@ -68,13 +68,13 @@ export default function ProjectDetailsModal({ isOpen, project, onClose }) {
                 {/* Left Side: Stunning high-fidelity showcase screenshot (Col span 7) */}
                 <div className="lg:col-span-7 space-y-4">
                   {/* Web Browser Frame Mockup */}
-                  <div className="w-full rounded-2xl overflow-hidden border border-border-color bg-neutral-100 dark:bg-neutral-900 shadow-md">
+                  <div className="w-full rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 shadow-xl relative border-0">
                     {/* Browser top header deck */}
-                    <div className="flex items-center space-y-0 space-x-1.5 px-4 py-3 border-b border-border-color bg-neutral-200/50 dark:bg-neutral-950/40">
+                    <div className="flex items-center space-y-0 space-x-1.5 px-4 py-3 bg-neutral-200/50 dark:bg-neutral-950/40 border-b border-border-color/5">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
                       <div className="w-2.5 h-2.5 rounded-full bg-amber-400/80" />
                       <div className="w-2.5 h-2.5 rounded-full bg-emerald-400/80" />
-                      <div className="text-[10px] sm:text-xs font-mono text-foreground/35 tracking-tight pl-3 overflow-hidden text-ellipsis whitespace-nowrap">
+                      <div className="text-[10px] font-mono text-foreground/35 tracking-tight pl-3 overflow-hidden text-ellipsis whitespace-nowrap">
                         {project.live.replace("https://", "")}
                       </div>
                     </div>
@@ -85,13 +85,14 @@ export default function ProjectDetailsModal({ isOpen, project, onClose }) {
                         src={project.image}
                         alt={`${project.title} Screenshot`}
                         fill
+                        sizes="(max-width: 1024px) 100vw, 650px"
                         className="object-cover object-top select-none hover:scale-[1.03] transition-transform duration-700"
                         priority
                       />
                     </div>
                   </div>
 
-                  <p className="text-[10px] sm:text-xs text-foreground/40 text-center italic">
+                  <p className="text-[10px] text-foreground/40 text-center italic">
                     ✦ High-fidelity responsive application screenshot preview
                   </p>
                 </div>
@@ -100,7 +101,7 @@ export default function ProjectDetailsModal({ isOpen, project, onClose }) {
                 <div className="lg:col-span-5 space-y-6">
                   {/* Category & Title */}
                   <div className="space-y-2">
-                    <span className="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/5 px-2.5 py-1 rounded-md border border-primary/15 max-w-fit block">
+                    <span className="text-[10px] font-extrabold text-primary uppercase tracking-widest bg-primary/8 px-3 py-1 rounded-full max-w-fit block">
                       {project.category}
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground leading-tight">
@@ -117,13 +118,13 @@ export default function ProjectDetailsModal({ isOpen, project, onClose }) {
                   </div>
 
                   {/* Technical Stack Badges */}
-                  <div className="space-y-2.5 pt-2 border-t border-border-color/60">
+                  <div className="space-y-2.5 pt-4 border-t border-border-color/10">
                     <h3 className="text-xs font-bold text-foreground/45 uppercase tracking-wider">Built With</h3>
                     <div className="flex flex-wrap gap-1.5">
                       {project.tech.map((t) => (
                         <span
                           key={t}
-                          className="text-[10px] sm:text-xs font-semibold px-2.5 py-1 rounded-lg bg-neutral-100/50 dark:bg-neutral-900/50 border border-border-color text-foreground/80 cursor-default select-none hover:border-primary/30 transition-all duration-200"
+                          className="text-[10px] font-bold px-3 py-1.5 rounded-full bg-neutral-100/80 dark:bg-neutral-900/60 text-foreground/75 cursor-default select-none hover:bg-primary/10 hover:text-primary transition-all duration-200"
                         >
                           {t}
                         </span>
@@ -136,10 +137,10 @@ export default function ProjectDetailsModal({ isOpen, project, onClose }) {
               </div>
 
               {/* Technical Challenges & Improvements Split Deck (Cols 2 on wider screens) */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-border-color/60">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-border-color/10">
                 
                 {/* Challenge Block */}
-                <div className="p-5 md:p-6 rounded-2xl bg-red-500/5 dark:bg-red-500/5 border border-red-500/15 flex flex-col justify-between space-y-3">
+                <div className="p-6 rounded-2xl bg-red-500/[0.04] dark:bg-red-500/[0.06] flex flex-col justify-between space-y-4">
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2 text-red-500">
                       <AlertTriangle className="h-4.5 w-4.5" />
@@ -153,7 +154,7 @@ export default function ProjectDetailsModal({ isOpen, project, onClose }) {
                 </div>
 
                 {/* Improvements Block */}
-                <div className="p-5 md:p-6 rounded-2xl bg-primary/5 dark:bg-primary/5 border border-primary/15 flex flex-col justify-between space-y-3">
+                <div className="p-6 rounded-2xl bg-primary/[0.04] dark:bg-primary/[0.06] flex flex-col justify-between space-y-4">
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2 text-primary">
                       <Sparkles className="h-4.5 w-4.5 animate-pulse" />
@@ -171,27 +172,26 @@ export default function ProjectDetailsModal({ isOpen, project, onClose }) {
             </div>
 
             {/* Modal Actions Footer */}
-            <div className="h-20 shrink-0 flex items-center justify-between px-6 md:px-8 border-t border-border-color bg-background/25 backdrop-blur-sm">
-              <span className="hidden sm:inline-block text-[10px] sm:text-xs text-foreground/45 font-medium">
+            <div className="h-20 shrink-0 flex items-center justify-between px-8 border-t border-border-color/10 bg-background/5 backdrop-blur-md">
+              <span className="hidden sm:inline-block text-[10px] text-foreground/45 font-medium">
                 ✦ High fidelity, modular architecture preview
               </span>
               
               <div className="flex items-center space-x-3 w-full sm:w-auto">
                 <SourceCodeButton
                   project={project}
-                  className="flex-1 sm:flex-initial font-bold border-border-color hover:border-primary text-foreground rounded-xl py-5 hover:bg-primary/5 transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer text-xs"
+                  className="flex-1 sm:flex-initial font-bold border-0 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 text-foreground rounded-xl h-11 transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer text-xs px-5"
                 />
 
-                <Button
-                  as="a"
+                <a
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 sm:flex-initial font-bold bg-primary text-primary-foreground hover:scale-[1.02] active:scale-[0.98] rounded-xl py-5 shadow-md shadow-primary/10 hover:shadow-primary/20 transition-all duration-200 flex items-center justify-center space-x-1.5 cursor-pointer text-xs"
+                  className="flex-1 sm:flex-initial font-bold bg-primary text-primary-foreground dark:bg-emerald-600 dark:hover:bg-emerald-500 hover:scale-[1.02] active:scale-[0.98] rounded-xl h-11 px-5 shadow-lg shadow-primary/10 hover:shadow-primary/25 transition-all duration-200 flex items-center justify-center space-x-1.5 cursor-pointer text-xs border-0"
                 >
                   <span>Live Preview</span>
                   <ExternalLink className="h-3.5 w-3.5" />
-                </Button>
+                </a>
               </div>
             </div>
 

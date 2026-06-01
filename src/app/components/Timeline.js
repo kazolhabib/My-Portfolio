@@ -7,10 +7,11 @@ const TIMELINE_ITEMS = [
   {
     type: "work",
     date: "2025 - Present",
-    title: "React & Next.js Frontend Engineer",
+    title: "Full-Stack Next.js & React Engineer",
     subtitle: "Enterprise Applications & Open Source",
-    description: "Developing dynamic, server-side rendered application suites. Specializing in state optimization, custom React hooks, Core Web Vitals speed tuning, and high-fidelity custom animation frameworks.",
+    description: "Developing secure, high-performance web applications. Specializing in robust RESTful APIs with Express, scalable database architectures with MongoDB, and bulletproof user session management with Better Auth. Bridging engineering-grade backend layers with dynamic, server-side rendered React and Next.js frontend interfaces.",
     icon: Briefcase,
+    skills: ["Next.js", "React", "Express.js", "MongoDB", "Better Auth"],
   },
   {
     type: "work",
@@ -19,6 +20,7 @@ const TIMELINE_ITEMS = [
     subtitle: "Freelance & Premium Digital Agencies",
     description: "Built pixel-perfect, high-performance visual solutions. Designed complex Webflow CMS structures, tailored custom interactions, and led user experience testing loops.",
     icon: Briefcase,
+    skills: ["Webflow", "CMS Architecture", "Interactions", "JavaScript", "UX Design", "GSAP"],
   },
   {
     type: "education",
@@ -27,19 +29,24 @@ const TIMELINE_ITEMS = [
     subtitle: "Academic Foundation",
     description: "Studied advanced research methodologies, socio-critical analyses, and human behavioral structures. Directly applied this systemic thinking to UX user-persona modeling, semantic content structures, and clear visual hierarchies.",
     icon: GraduationCap,
+    skills: ["Research", "UX Modeling", "Visual Hierarchy", "Systemic Thinking"],
   },
 ];
 
 export default function Timeline() {
   return (
-    <section id="timeline" className="relative w-full py-16 md:py-24 px-6 sm:px-8 lg:px-12 bg-transparent border-t border-border-color transition-colors duration-350">
-      <div className="mx-auto max-w-[1440px] w-full">
+    <section id="timeline" className="relative w-full py-16 md:py-24 px-6 sm:px-8 lg:px-12 bg-transparent border-t border-border-color transition-colors duration-350 overflow-hidden">
+      {/* Premium Background Mesh and Dot Grid Overlays */}
+      <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-dot-grid pointer-events-none z-0" />
+
+      <div className="relative z-10 mx-auto max-w-[90rem] w-full">
 
         {/* Section Header */}
         <div className="flex flex-col space-y-3 mb-16">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-primary/5 border border-primary/20 accent-border max-w-fit">
             <Calendar className="h-4 w-4 text-primary" />
-            <span className="text-[10px] sm:text-xs font-bold tracking-wider text-primary uppercase">
+            <span className="text-[0.625rem] sm:text-xs font-bold tracking-wider text-primary uppercase">
               Timeline
             </span>
           </div>
@@ -75,7 +82,7 @@ export default function Timeline() {
 
                   {/* Meta Details */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                    <span className="inline-block text-[11px] font-bold text-primary px-2.5 py-1 rounded-md bg-primary/5 border border-primary/10 max-w-fit">
+                    <span className="inline-block text-[0.6875rem] font-bold text-primary px-2.5 py-1 rounded-md bg-primary/5 border border-primary/10 max-w-fit">
                       {item.date}
                     </span>
                     <span className="text-xs text-foreground/45 flex items-center font-medium capitalize">
@@ -95,6 +102,20 @@ export default function Timeline() {
                   <p className="text-xs sm:text-sm text-foreground/70 leading-relaxed max-w-3xl">
                     {item.description}
                   </p>
+
+                  {/* Technology Badges */}
+                  {item.skills && (
+                    <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border-color/40">
+                      {item.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-[10px] font-semibold px-2.5 py-1 rounded-lg bg-neutral-100/50 dark:bg-neutral-900/50 border border-border-color/80 text-foreground/70 hover:border-primary hover:text-primary transition-all duration-200 cursor-default select-none"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             );

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { Download, ArrowUpRight, Mail } from "lucide-react";
+import { Download, ArrowUpRight, Mail, MapPin, Globe, Sparkles } from "lucide-react";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -39,7 +39,7 @@ const TECH_TAGS = [
   "JavaScript ES6+",
   "Webflow",
   "Webflow CMS",
-  "Interactions",
+  "Client First",
   "Express.JS",
   "Better Auth",
   "MongoDB",
@@ -48,9 +48,9 @@ const TECH_TAGS = [
 ];
 
 export default function Hero() {
-  const { openResume } = useResumeModal();
+  const { openResume, triggerContactHighlight } = useResumeModal();
   const [typedText, setTypedText] = useState("");
-  const fullText = "Frontend Developer & Webflow Expert";
+  const fullText = "Full-Stack Developer & Webflow Expert";
 
   // Typing effect logic
   useEffect(() => {
@@ -107,7 +107,7 @@ export default function Hero() {
               {/* Tech Badge */}
               <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-primary/5 border border-primary/20 accent-border max-w-fit">
                 <span className="text-[10px] sm:text-xs font-bold tracking-wider text-primary uppercase">
-                  ✦ Next-Gen Frontend Architect
+                  ✦ Next-Gen Full-Stack Architect
                 </span>
               </div>
 
@@ -132,62 +132,85 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Card 2: Premium Squircle Photo Deck with HUD Brackets (Col span 4, Row span 2) */}
-          <div className="md:col-span-4 md:row-span-2 p-8 bento-card flex flex-col items-center justify-center min-h-[400px]">
+          {/* Card 2: Luxurious Asymmetrical Editorial Polaroid Showcase (Col span 4, Row span 2) */}
+          <div className="md:col-span-4 md:row-span-2 p-6 sm:p-8 bento-card flex flex-col items-center justify-between min-h-[480px] sm:min-h-[500px] relative overflow-hidden group/card bg-gradient-to-tr from-card-bg via-card-bg to-neutral-50 dark:to-neutral-950 border border-border-color">
+            {/* Soft designer lighting bleed behind the stack */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gradient-to-tr from-primary/10 to-amber-500/10 blur-3xl opacity-50 group-hover/card:scale-125 transition-transform duration-1000 pointer-events-none" />
+
+            {/* 3D Motion Portrait deck */}
             <motion.div
               style={{ rotateX: springRotateX, rotateY: springRotateY, transformStyle: "preserve-3d" }}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
-              className="relative cursor-pointer w-[210px] h-[280px] sm:w-[240px] sm:h-[320px] group transition-all duration-300"
+              className="relative cursor-pointer w-[235px] h-[305px] sm:w-[265px] sm:h-[345px] group/portrait transition-all duration-300 z-10"
             >
-              {/* Backing structural glowing border rotated slightly */}
+              {/* Backing Card Layer A: Warm Emerald Accent (Rotated Left) */}
               <div
-                style={{ transform: "translateZ(-15px)" }}
-                className="absolute inset-0 rounded-[32px] border-2 border-dashed border-primary/20 pointer-events-none -rotate-3 group-hover:rotate-3 group-hover:border-primary/45 transition-transform duration-700 ease-out"
+                style={{ transform: "translateZ(-15px) rotate(-6deg)" }}
+                className="absolute inset-0 rounded-[2.2rem] bg-gradient-to-tr from-primary/15 to-primary/35 border border-primary/20 pointer-events-none group-hover/portrait:rotate-[-2deg] group-hover/portrait:scale-102 transition-transform duration-700 ease-out"
               />
 
-              {/* Minimal Tech HUD Corner Brackets */}
-              {/* Top-Left Bracket */}
-              <div className="absolute -top-3 -left-3 w-5 h-5 border-t-2 border-l-2 border-primary/30 group-hover:border-primary group-hover:-translate-x-1 group-hover:-translate-y-1 transition-all duration-500 ease-out rounded-tl-md" />
-              {/* Top-Right Bracket */}
-              <div className="absolute -top-3 -right-3 w-5 h-5 border-t-2 border-r-2 border-primary/30 group-hover:border-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500 ease-out rounded-tr-md" />
-              {/* Bottom-Left Bracket */}
-              <div className="absolute -bottom-3 -left-3 w-5 h-5 border-b-2 border-l-2 border-primary/30 group-hover:border-primary group-hover:-translate-x-1 group-hover:translate-y-1 transition-all duration-500 ease-out rounded-bl-md" />
-              {/* Bottom-Right Bracket */}
-              <div className="absolute -bottom-3 -right-3 w-5 h-5 border-b-2 border-r-2 border-primary/30 group-hover:border-primary group-hover:translate-x-1 group-hover:translate-y-1 transition-all duration-500 ease-out rounded-br-md" />
-
-              {/* Main Image Deck Container */}
+              {/* Backing Card Layer B: Luxurious Pale Amber/Gold Accent (Rotated Right) */}
               <div
-                style={{ transform: "translateZ(20px)" }}
-                className="absolute inset-0 overflow-hidden rounded-[32px] border border-border-color p-2 hover:border-primary transition-colors duration-500 bg-background/50 shadow-lg"
+                style={{ transform: "translateZ(-8px) rotate(4deg)" }}
+                className="absolute inset-0 rounded-[2.2rem] bg-gradient-to-bl from-amber-500/15 to-amber-500/25 border border-amber-500/15 pointer-events-none group-hover/portrait:rotate-[1deg] group-hover/portrait:scale-102 transition-transform duration-700 ease-out"
+              />
+
+              {/* Main Polaroid Gallery Frame (Centered & Sharp) */}
+              <div
+                style={{ transform: "translateZ(15px)" }}
+                className="absolute inset-0 p-3 pb-5 rounded-[2.2rem] bg-white dark:bg-neutral-900 border border-border-color shadow-2xl flex flex-col justify-between group-hover/portrait:border-primary/35 transition-colors duration-500"
               >
-                <div className="relative w-full h-full rounded-[24px] overflow-hidden border-2 border-primary/10 group-hover:border-primary/40 transition-colors duration-500">
+                {/* Image Container with precise rounded edges */}
+                <div className="relative w-full h-[80%] rounded-[1.6rem] overflow-hidden border border-neutral-100 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950">
                   <Image
                     src="/kazol-habib-v2.png"
                     alt="Kazol Habib"
                     fill
                     priority
-                    sizes="(max-width: 768px) 210px, 240px"
-                    className="object-cover object-center scale-102 group-hover:scale-106 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 235px, 265px"
+                    className="object-cover object-center scale-102 group-hover/portrait:scale-105 transition-transform duration-700 ease-out"
                   />
-                  {/* Subtle luxurious shadow gradient mask */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
-                </div>
-              </div>
+                  {/* Subtle luxurious natural overlay vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
-              {/* Floating "Available for Hire" status tag overlay */}
-              <div
-                style={{ transform: "translateZ(35px)" }}
-                className="absolute -bottom-2 -right-2 px-3 py-1.5 rounded-xl bg-card-bg/90 backdrop-blur-md border border-border-color group-hover:border-primary flex items-center space-x-1.5 shadow-md shadow-black/5 transition-all duration-350 select-none"
-              >
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[10px] font-bold tracking-wider text-foreground/80">AVAILABLE FOR HIRE</span>
+                  {/* Minimal embedded active status badge inside the photo */}
+                  <div className="absolute top-3 right-3 px-2 py-1 rounded-full bg-neutral-950/70 backdrop-blur-md border border-white/10 flex items-center space-x-1.5 shadow-md">
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                    </span>
+                    <span className="text-[7.5px] font-extrabold tracking-widest text-neutral-200 uppercase">ACTIVE</span>
+                  </div>
+                </div>
+
+                {/* Polaroid Signature / Fine Typography Zone */}
+                <div className="flex items-top justify-between px-2 pt-2 gap-2 w-full overflow-hidden">
+                  <div className="text-left shrink-0">
+                    <h4 className="text-[11px] sm:text-xs font-black tracking-wide text-foreground whitespace-nowrap">Kazol Habib</h4>
+                    <p className="text-[7.5px] sm:text-[8px] font-bold text-foreground/45 uppercase tracking-widest mt-0.5 whitespace-nowrap">EST. 2021</p>
+                  </div>
+                  <div className="text-right shrink-0">
+                    <p className="text-[8px] sm:text-[9px] font-black text-primary tracking-widest uppercase whitespace-nowrap">// MERN STACK ENGINEER</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
-            <div className="text-center mt-8">
-              <p className="text-xs font-bold text-primary tracking-widest uppercase">Based in Bangladesh</p>
-              <p className="text-xs text-foreground/50 mt-1">Available worldwide</p>
+            {/* Elegant Premium Designer Subtext / Quote */}
+            <div className="w-full mt-4 px-2 text-center z-10">
+              <p className="text-[10px] sm:text-xs font-medium text-foreground/50 leading-relaxed italic max-w-[260px] mx-auto">
+                "Expert in crafting premium No-Code & Webflow websites, bridging visual pixel discipline with modern frontend engineering speed."
+              </p>
+            </div>
+
+            {/* Sleek Minimalist Location Indicator Footer */}
+            <div className="w-full mt-5 pt-4 flex items-center justify-between text-[11px] font-bold text-foreground/50 z-10 px-2">
+              <div className="flex items-center space-x-1.5 text-foreground/75">
+                <MapPin className="h-3.5 w-3.5 text-primary" />
+                <span>Dhaka, Tangail, BD</span>
+              </div>
+
             </div>
           </div>
 
@@ -218,30 +241,27 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-3 mt-6">
-              <Button
-                as="a"
-                href="https://drive.google.com/file/d/1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv/view?usp=drive_link"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
                 onClick={(e) => {
                   e.preventDefault();
                   openResume();
                 }}
-                className="group w-full font-bold bg-primary text-primary-foreground rounded-xl py-5.5 hover:scale-102 transition-transform duration-350 shadow-md shadow-primary/10 flex items-center justify-center space-x-2 cursor-pointer"
+                className="group w-full font-bold bg-primary text-primary-foreground rounded-xl h-12 hover:scale-[1.01] active:scale-[0.99] transition-transform duration-350 shadow-md shadow-primary/10 flex items-center justify-center space-x-2 cursor-pointer text-sm"
               >
                 <span>Resume</span>
-                <Download className="h-4 w-4" />
-              </Button>
+                <Download className="h-4 w-4 animate-download-bounce" />
+              </button>
 
-              <Button
-                as="a"
-                href="#contact"
-                variant="bordered"
-                className="group w-full font-bold border-border-color hover:border-primary text-foreground rounded-xl py-5.5 hover:bg-primary/5 transition-all duration-350 flex items-center justify-center space-x-1 cursor-pointer"
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  triggerContactHighlight();
+                }}
+                className="lets-talk-pulse group w-full font-bold border border-border-color hover:border-primary text-foreground rounded-xl h-12 hover:bg-primary/5 transition-all duration-350 flex items-center justify-center space-x-1 cursor-pointer text-sm"
               >
                 <span>Let's Talk</span>
-                <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-350" />
-              </Button>
+                <ArrowUpRight className="h-4 w-4 animate-arrow-bounce group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-350" />
+              </button>
             </div>
           </div>
 
@@ -260,6 +280,12 @@ export default function Hero() {
                   href={social.href}
                   target={social.target}
                   rel={social.rel}
+                  onClick={(e) => {
+                    if (social.label === "Email") {
+                      e.preventDefault();
+                      window.location.href = social.href;
+                    }
+                  }}
                   className="p-3.5 rounded-xl border border-border-color hover:border-primary text-foreground/60 hover:text-primary hover:scale-105 hover:shadow-lg hover:shadow-primary/5 transition-all duration-350 cursor-pointer"
                   aria-label={social.label}
                 >

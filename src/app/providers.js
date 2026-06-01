@@ -23,6 +23,8 @@ const ResumeModalContext = createContext({
   openResume: () => {},
   closeResume: () => {},
   isResumeOpen: false,
+  isContactHighlighted: false,
+  triggerContactHighlight: () => {},
 });
 
 export const useResumeModal = () => useContext(ResumeModalContext);
@@ -30,9 +32,21 @@ export const useResumeModal = () => useContext(ResumeModalContext);
 export function Providers({ children }) {
   const [mounted, setMounted] = useState(false);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [isContactHighlighted, setIsContactHighlighted] = useState(false);
 
   const openResume = () => setIsResumeOpen(true);
   const closeResume = () => setIsResumeOpen(false);
+
+  const triggerContactHighlight = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsContactHighlighted(true);
+    setTimeout(() => {
+      setIsContactHighlighted(false);
+    }, 2000);
+  };
 
   // Prevent hydration mismatch by waiting until mounted
   useEffect(() => {
@@ -45,7 +59,13 @@ export function Providers({ children }) {
 
   return (
     <NextThemesProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-      <ResumeModalContext.Provider value={{ isResumeOpen, openResume, closeResume }}>
+      <ResumeModalContext.Provider value={{ 
+        isResumeOpen, 
+        openResume, 
+        closeResume, 
+        isContactHighlighted, 
+        triggerContactHighlight 
+      }}>
         {children}
         <ResumeModal isOpen={isResumeOpen} onClose={closeResume} />
       </ResumeModalContext.Provider>
