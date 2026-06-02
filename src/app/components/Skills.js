@@ -115,9 +115,9 @@ export default function Skills() {
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
       <InteractiveDotGrid />
       
-      {/* Ambient Neon Background Glows */}
-      <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] rounded-full bg-primary/5 blur-[120px] pointer-events-none z-0 opacity-40 animate-[pulse_8s_infinite_alternate]" />
-      <div className="absolute bottom-10 left-10 w-[500px] h-[500px] rounded-full bg-emerald-500/4 blur-[140px] pointer-events-none z-0 opacity-30 animate-[pulse_6s_infinite_alternate]" />
+      {/* Ambient Backlight Spotlights on Left and Right Edges */}
+      <div className="absolute top-1/4 -right-64 w-[500px] h-[500px] rounded-full bg-backlight blur-[140px] pointer-events-none z-0 opacity-40 animate-[pulse_8s_infinite_alternate]" />
+      <div className="absolute bottom-10 -left-64 w-[500px] h-[500px] rounded-full bg-backlight blur-[140px] pointer-events-none z-0 opacity-40 animate-[pulse_6s_infinite_alternate]" />
 
       <div className="relative z-10 mx-auto max-w-[90rem] w-full">
         

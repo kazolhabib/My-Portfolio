@@ -61,9 +61,9 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* Extremely Premium Background Glowing Blurs */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/6 dark:bg-primary/4 blur-[130px] pointer-events-none z-0 opacity-40 animate-[pulse_8s_infinite_alternate]" />
-        <div className="absolute -bottom-40 right-10 w-[600px] h-[600px] rounded-full bg-emerald-500/5 blur-[150px] pointer-events-none z-0 opacity-50 animate-[pulse_6s_infinite_alternate]" />
+        {/* Extremely Premium Background Glowing Blurs on Left and Right Edges */}
+        <div className="absolute top-1/4 -left-64 w-[550px] h-[550px] rounded-full bg-backlight blur-[150px] pointer-events-none z-0 opacity-45 animate-[pulse_8s_infinite_alternate]" />
+        <div className="absolute top-2/3 -right-64 w-[550px] h-[550px] rounded-full bg-backlight blur-[150px] pointer-events-none z-0 opacity-45 animate-[pulse_6s_infinite_alternate]" />
 
         {/* Bento/Editorial Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch relative z-10">

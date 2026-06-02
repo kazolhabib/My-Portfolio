@@ -255,9 +255,9 @@ export default function Projects() {
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
       <InteractiveDotGrid />
 
-      {/* Floating Radial Neon Lighting Accents */}
-      <div className="absolute -top-40 left-1/4 w-[400px] h-[400px] rounded-full bg-primary/8 dark:bg-primary/5 blur-[120px] pointer-events-none z-0 animate-[pulse_6s_infinite_alternate]" />
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-emerald-500/5 dark:bg-emerald-500/3 blur-[140px] pointer-events-none z-0 animate-[pulse_8s_infinite_alternate]" />
+      {/* Floating Radial Backlight Spotlights on Left and Right Edges */}
+      <div className="absolute top-1/4 -left-64 w-[500px] h-[500px] rounded-full bg-backlight blur-[140px] pointer-events-none z-0 animate-[pulse_6s_infinite_alternate]" />
+      <div className="absolute bottom-1/4 -right-64 w-[500px] h-[500px] rounded-full bg-backlight blur-[140px] pointer-events-none z-0 animate-[pulse_8s_infinite_alternate]" />
 
       <div className="relative z-10 mx-auto max-w-[90rem] w-full">
         

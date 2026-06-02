@@ -10,6 +10,7 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-card-bg: var(--card-bg);
   --color-border-color: var(--border-color);
+  --color-backlight: var(--backlight-glow);
 }
 
 :root {
@@ -21,17 +22,19 @@
   --primary-foreground: #FDFDFB;
   --card-bg: #FFFFFF;
   --border-color: #E6E6EB;
+  --backlight-glow: rgba(5, 150, 105, 0.06);
 }
 
 .dark {
-  /* High-End Graphite Black Theme with Vivid Emerald Mint Accent */
-  --background: #0A0A0C;
+  /* High-End Absolute Resend Black Theme with Vivid Emerald Mint Accent */
+  --background: #000000;
   --foreground: #F3F4F6;
   --primary: #10B981;
   /* Vivid Emerald Mint */
-  --primary-foreground: #0A0A0C;
-  --card-bg: #121215;
-  --border-color: #1F1F24;
+  --primary-foreground: #000000;
+  --card-bg: #0A0A0C;
+  --border-color: #17171A;
+  --backlight-glow: rgba(255, 255, 255, 0.08);
 }
 
 @layer base {
@@ -50,8 +53,8 @@
 
   .dark body {
     background-image:
-      radial-gradient(circle at 0% 0%, rgba(16, 185, 129, 0.06) 0%, transparent 60%),
-      radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.04) 0%, transparent 60%);
+      radial-gradient(circle at 0% 30%, rgba(255, 255, 255, 0.07) 0%, transparent 55%),
+      radial-gradient(circle at 100% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 55%);
   }
 
   /* Editorial-grade smooth transitions */
@@ -233,20 +236,21 @@
 
 .dark .bg-mesh-alternate {
   background-image: 
-    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.035) 0%, transparent 70%),
-    radial-gradient(circle at 0% 100%, rgba(16, 185, 129, 0.02) 0%, transparent 50%);
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%),
+    radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
 }
 
 /* Subtle, high-end micro dot grid pattern overlay */
 .bg-dot-grid {
-  background-image: radial-gradient(rgba(5, 150, 105, 0.09) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1.5px, transparent 1.5px);
   background-size: 28px 28px;
   mask-image: radial-gradient(ellipse at center, black 15%, transparent 80%);
   -webkit-mask-image: radial-gradient(ellipse at center, black 15%, transparent 80%);
 }
 
 .dark .bg-dot-grid {
-  background-image: radial-gradient(rgba(16, 185, 129, 0.12) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
 }
 
 /* Premium dynamic breathing backlight spotlights behind sections */
@@ -276,8 +280,8 @@
 }
 
 .dark .section-backlight {
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.09) 0%, rgba(5, 150, 105, 0.04) 55%, transparent 75%);
-  filter: blur(150px);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 55%, transparent 75%);
+  filter: blur(160px);
 }
 
 /* Premium continuous slow float & spin animation for footer monogram background */

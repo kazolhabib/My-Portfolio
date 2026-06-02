@@ -102,9 +102,9 @@ export default function Hero() {
       <div className="absolute inset-0 bg-mesh-alternate pointer-events-none z-0" />
       <InteractiveDotGrid />
 
-      {/* Floating Radial Neon Lighting Accents */}
-      <div className="absolute -top-60 right-1/4 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[150px] pointer-events-none z-0 opacity-60 animate-[pulse_8s_infinite_alternate]" />
-      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] rounded-full bg-emerald-500/5 blur-[120px] pointer-events-none z-0 opacity-40 animate-[pulse_6s_infinite_alternate]" />
+      {/* Floating Radial Backlight Spotlights on Left and Right Edges */}
+      <div className="absolute -top-40 -left-64 w-[600px] h-[600px] rounded-full bg-backlight blur-[150px] pointer-events-none z-0 opacity-60 animate-[pulse_8s_infinite_alternate]" />
+      <div className="absolute top-1/2 -right-64 w-[600px] h-[600px] rounded-full bg-backlight blur-[150px] pointer-events-none z-0 opacity-50 animate-[pulse_6s_infinite_alternate]" />
 
       <div className="mx-auto max-w-[1440px] w-full relative z-10">
 

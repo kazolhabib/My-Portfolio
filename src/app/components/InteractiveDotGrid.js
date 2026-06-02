@@ -60,7 +60,8 @@ export default function InteractiveDotGrid() {
       const isDark = document.documentElement.classList.contains("dark");
       
       // Standard brand palette emerald alpha-blends
-      const baseColor = isDark ? "rgba(16, 185, 129, 0.08)" : "rgba(5, 150, 105, 0.07)";
+      // Standard grayscale palette overlays: white in dark mode, black in light mode
+      const baseColor = isDark ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.06)";
 
       const cols = Math.floor(width / spacing) + 1;
       const rows = Math.floor(height / spacing) + 1;
@@ -84,10 +85,10 @@ export default function InteractiveDotGrid() {
               // Proximity scaling
               size = dotRadius + (maxRadius - dotRadius) * factorSq;
 
-              // Proximity color morph
+              // Proximity color morph (glowing grayscale indicators)
               drawColor = isDark
-                ? `rgba(16, 185, 129, ${0.08 + (0.75 - 0.08) * factor})`
-                : `rgba(5, 150, 105, ${0.07 + (0.65 - 0.07) * factor})`;
+                ? `rgba(255, 255, 255, ${0.08 + (0.55 - 0.08) * factor})`
+                : `rgba(0, 0, 0, ${0.06 + (0.45 - 0.06) * factor})`;
 
               // Micro-magnetic pull: dots shift slightly towards pointer
               const angle = Math.atan2(mouse.y - y, mouse.x - x);
