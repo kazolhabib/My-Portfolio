@@ -15,15 +15,44 @@ import {
   MessageSquare, 
   Check, 
   Loader2, 
-  AlertCircle 
+  AlertCircle,
+  Compass,
+  Code2,
+  ExternalLink,
+  Clock,
+  ArrowUpRight
 } from "lucide-react";
 import InteractiveDotGrid from "./InteractiveDotGrid";
 import { useResumeModal } from "../providers";
+
+// Custom inline SVG icons for premium look
+const GithubIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
+);
+
+const LinkedinIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
+
+const FacebookIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
 
 export default function Contact() {
   const { isContactHighlighted } = useResumeModal();
   const [showEmailToast, setShowEmailToast] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [localTime, setLocalTime] = useState("");
+  const [hoveredLink, setHoveredLink] = useState(null);
   
   // Form State
   const [formData, setFormData] = useState({
@@ -39,6 +68,22 @@ export default function Contact() {
 
   useEffect(() => {
     setTimeout(() => setMounted(true), 0);
+  }, []);
+
+  useEffect(() => {
+    const updateTime = () => {
+      const options = {
+        timeZone: "Asia/Dhaka",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      };
+      setLocalTime(new Intl.DateTimeFormat("en-US", options).format(new Date()));
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -463,14 +508,167 @@ export default function Contact() {
 
         </div>
 
-        {/* Minimal Editorial Footer */}
-        <div className="pt-8 border-t border-border-color/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-[10px] sm:text-xs font-semibold text-foreground/40 relative z-10">
-          <div>
-            <span>© 2026 Kazol Habib. Designing Experiences. Engineering Futures. All rights reserved.</span>
+        {/* Premium Multi-Column Bento Footer */}
+        <div className="pt-16 border-t border-border-color/10 mt-16 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 items-start mb-16">
+            
+            {/* Column 1: Brand & Status */}
+            <div className="lg:col-span-4 space-y-6 text-left">
+              <a href="#home" className="group flex items-center space-x-3 select-none max-w-fit">
+                {/* Elegant Geometric SVG Monogram */}
+                <div className="relative w-9 h-9 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-primary/10 rounded-full blur-[4px] scale-90 group-hover:scale-110 transition-transform duration-500 opacity-60" />
+                  <svg className="w-8 h-8 text-primary transform group-hover:rotate-[360deg] transition-transform duration-1000 ease-out z-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 8 L92 50 L50 92 L8 50 Z" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M38 32 V68" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+                    <path d="M62 32 V68" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+                    <path d="M38 50 H62" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+                    <path d="M38 50 L54 34" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+                    <path d="M38 50 L54 66" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" />
+                  </svg>
+                </div>
+                
+                <div className="flex flex-col text-left">
+                  <span className="text-sm sm:text-base font-black tracking-tight text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
+                    KAZOL HABIB
+                  </span>
+                  <span className="text-[8px] sm:text-[9px] font-extrabold text-foreground/45 uppercase tracking-[0.22em] leading-none mt-0.5 transition-colors duration-300 group-hover:text-foreground/70">
+                    Full-Stack Engineer
+                  </span>
+                </div>
+              </a>
+
+              <p className="text-xs sm:text-sm text-foreground/50 max-w-sm leading-relaxed font-normal">
+                Designing and engineering secure, high-performance web ecosystems, custom dashboard applications, and pixel-perfect visual interactions.
+              </p>
+
+              {/* Availability Status Badge */}
+              <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-xl bg-neutral-100/50 dark:bg-neutral-900/30 border border-neutral-200/10 dark:border-neutral-800/20 select-none shadow-sm max-w-fit">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span className="text-[10px] font-extrabold tracking-wider text-foreground/60 uppercase">
+                  Available for Contracts
+                </span>
+              </div>
+            </div>
+
+            {/* Column 2: Sitemap Navigation */}
+            <div className="lg:col-span-2 space-y-4 text-left">
+              <h3 className="text-[10px] sm:text-[11px] font-extrabold text-foreground/45 uppercase tracking-[0.2em] select-none">
+                Sitemap
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  { label: "About", href: "#about" },
+                  { label: "Skills", href: "#skills" },
+                  { label: "Projects", href: "#projects" },
+                  { label: "Contact", href: "#contact" }
+                ].map((link, idx) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      onMouseEnter={() => setHoveredLink(idx)}
+                      onMouseLeave={() => setHoveredLink(null)}
+                      className="group relative inline-block text-[11px] font-extrabold tracking-wider uppercase text-foreground/75 hover:text-primary transition-colors duration-300 py-1"
+                    >
+                      <span className="relative overflow-hidden block h-3.5 leading-none">
+                        <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">
+                          {link.label}
+                        </span>
+                        <span className="block absolute top-0 left-0 text-primary transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-[120%] group-hover:translate-y-0">
+                          {link.label}
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 3: Connect & Socials */}
+            <div className="lg:col-span-3 space-y-4 text-left">
+              <h3 className="text-[10px] sm:text-[11px] font-extrabold text-foreground/45 uppercase tracking-[0.2em] select-none">
+                Digital Connect
+              </h3>
+              <div className="grid grid-cols-2 gap-3 max-w-xs">
+                {[
+                  { icon: GithubIcon, label: "GitHub", href: "https://github.com/kazolhabib" },
+                  { icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/in/kazol-habib/" },
+                  { icon: FacebookIcon, label: "Facebook", href: "https://www.facebook.com/kazollhabib" },
+                  { icon: Mail, label: "Email", href: "mailto:kazoll.habibb@gmail.com" }
+                ].map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target={social.label === "Email" ? undefined : "_blank"}
+                      rel="noopener noreferrer"
+                      className="group flex items-center space-x-2.5 p-2.5 rounded-xl border border-neutral-200/10 dark:border-neutral-800/10 bg-neutral-100/40 hover:bg-neutral-100/70 dark:bg-neutral-950/20 dark:hover:bg-neutral-950/50 text-foreground/75 hover:text-primary transition-all duration-300 shadow-sm"
+                    >
+                      <div className="p-1.5 rounded-lg bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-300 shrink-0">
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-[9px] font-extrabold text-foreground/40 uppercase tracking-wider">{social.label}</p>
+                        <p className="text-[10px] font-bold text-foreground/70 group-hover:text-primary transition-colors duration-300 truncate">Connect</p>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Column 4: Tech Stack Badge Grid */}
+            <div className="lg:col-span-3 space-y-4 text-left">
+              <h3 className="text-[10px] sm:text-[11px] font-extrabold text-foreground/45 uppercase tracking-[0.2em] select-none">
+                System Specs
+              </h3>
+              <div className="p-4 rounded-2xl border border-neutral-200/10 dark:border-neutral-800/10 bg-neutral-100/30 dark:bg-neutral-950/10 backdrop-blur-md shadow-sm space-y-3">
+                <div className="flex items-center space-x-2 text-[10px] font-bold text-foreground/50">
+                  <Code2 className="h-4 w-4 text-primary shrink-0" />
+                  <span>Portfolio Engineering Spec</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { name: "Next.js 16", desc: "Framework" },
+                    { name: "Tailwind v4", desc: "Styling" },
+                    { name: "Framer Motion", desc: "Animations" },
+                    { name: "HeroUI 3", desc: "UI Library" }
+                  ].map((tech) => (
+                    <div key={tech.name} className="p-2 rounded-xl bg-neutral-200/40 dark:bg-neutral-900/30 border border-neutral-200/10 dark:border-neutral-800/20 text-left">
+                      <p className="text-[9px] font-extrabold text-foreground/75 truncate">{tech.name}</p>
+                      <p className="text-[7.5px] font-bold text-foreground/40 uppercase tracking-wider mt-0.5">{tech.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
           </div>
-          <div className="flex items-center justify-center space-x-1.5 select-none">
-            <span>Built with Next.js, HeroUI & Passion</span>
-            <Heart className="h-3.5 w-3.5 text-primary fill-primary animate-[pulse_1.2s_infinite]" />
+
+          {/* Bottom Copyright & Details Bar */}
+          <div className="pt-8 border-t border-border-color/10 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left text-[10px] sm:text-xs font-semibold text-foreground/40">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <span>© {new Date().getFullYear()} Kazol Habib. Designing Experiences. Engineering Futures. All rights reserved.</span>
+            </div>
+
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 items-center">
+              {/* Dynamic Local Clock / Location */}
+              <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-neutral-100/50 dark:bg-neutral-900/30 border border-neutral-200/10 dark:border-neutral-800/20 select-none shadow-sm">
+                <Compass className="h-3.5 w-3.5 text-primary animate-[spin_8s_linear_infinite]" />
+                <span className="text-[9px] sm:text-[10px] font-extrabold text-foreground/60 uppercase tracking-wider">
+                  Dhaka, BD · {localTime || "04:35 PM"}
+                </span>
+              </div>
+
+              <div className="flex items-center justify-center space-x-1.5 select-none">
+                <span>Built with Passion</span>
+                <Heart className="h-3.5 w-3.5 text-primary fill-primary animate-[pulse_1.2s_infinite]" />
+              </div>
+            </div>
           </div>
         </div>
 
