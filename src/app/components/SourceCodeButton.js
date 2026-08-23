@@ -17,7 +17,8 @@ export default function SourceCodeButton({ project, className = "" }) {
   const [showToast, setShowToast] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  const isWebflow = project.id !== "pethaven";
+  const projectsWithRepo = ["pethaven", "legalease", "crowdfunding"];
+  const isWebflow = !projectsWithRepo.includes(project.id);
 
   useEffect(() => {
     setTimeout(() => setMounted(true), 0);

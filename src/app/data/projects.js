@@ -1,5 +1,31 @@
 export const PROJECTS = [
   {
+    id: "legalease",
+    title: "LegalEase Lawyer Hiring Platform",
+    category: "Full-Stack Development",
+    short: "A premier legal marketplace connecting clients with verified lawyers via secure Stripe escrow.",
+    description: "LegalEase is a production-grade online lawyer hiring platform designed to connect individuals and businesses with top-tier verified legal professionals. Features a powerful specialization search engine, detailed lawyer profiles with hourly rates and ratings, six core practice areas (Corporate Law, Criminal Defense, Family Law, Intellectual Property, Civil Litigation, Tax Consultancy), secure Stripe escrow wallet integration, and a structured workflow from case intake through counsel review to escrow lock and secure record keeping.",
+    tech: ["Next.js 16", "React 19", "Tailwind CSS", "HeroUI", "Framer Motion", "Express.js", "MongoDB", "Stripe", "JWT", "Bcrypt.js"],
+    challenges: "Implementing a multi-step escrow payment flow where funds are held securely until consultation milestones are met, while ensuring real-time lawyer availability status updates and preventing double-booking conflicts across concurrent client sessions.",
+    improvements: "Integrate real-time video consultation rooms using WebRTC, add AI-powered case matching to automatically recommend the best-suited lawyers based on case descriptions, and implement a comprehensive lawyer review and rating system with sentiment analysis.",
+    live: "https://legalease-lawyer-hiring-platform.netlify.app/",
+    github: "https://github.com/kazolhabib/LegalEase-Online-Lawyer-Hiring-Platform",
+    image: "/legalease-showcase.png"
+  },
+  {
+    id: "crowdfunding",
+    title: "Crowdfunding Platform",
+    category: "Full-Stack Development",
+    short: "An independent crowdfunding ecosystem for backing meaningful ideas and launching creative projects.",
+    description: "Crowdfunding Platform is a beautifully designed, editorial-grade crowdfunding ecosystem built for discerning backers and remarkable creators. Features an elegant campaign exploration interface with featured story carousels, campaign launch workflows, developer onboarding, and powerful impact metrics ($2.4M directed to ideas, 12K active patrons, 48 countries reached). Supports global projects across technology, arts, and social impact categories with a considered backing philosophy.",
+    tech: ["React", "Tailwind CSS", "Framer Motion", "Express.js", "MongoDB", "Mongoose", "JWT", "Firebase Auth"],
+    challenges: "Designing a high-fidelity editorial layout with complex carousel animations, responsive typography scaling across breakpoints, and building a robust campaign lifecycle management system handling draft, active, funded, and expired campaign states with real-time funding progress tracking.",
+    improvements: "Add Stripe Connect for direct creator payouts, implement social sharing integrations with Open Graph previews, and build a backer dashboard with portfolio tracking across multiple backed campaigns.",
+    live: "https://crowdfunding-platform-pha.netlify.app/",
+    github: "https://github.com/kazolhabib/Crowdfunding-Platform",
+    image: "/crowdfunding-showcase.png"
+  },
+  {
     id: "amply",
     title: "Amply B2B Web Design Agency",
     category: "Webflow & UX Design",

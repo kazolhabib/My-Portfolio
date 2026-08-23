@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, FileText, Download } from "lucide-react";
 
 export default function ResumeModal({ isOpen, onClose }) {
-  const resumeUrl = "https://drive.google.com/file/d/1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv/view?usp=drive_link";
-  const downloadUrl = "https://drive.google.com/uc?export=download&id=1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv";
-  const embedUrl = "https://drive.google.com/file/d/1rBH8Yhz31EWaStXqNlEik50FaHAo0SCv/preview";
+  const resumeUrl = "https://drive.google.com/file/d/1pyJu0nZn4l1JC3gCP_KLmc9mMXKAHkr8/view?usp=sharing";
+  const downloadUrl = "https://drive.google.com/uc?export=download&id=1pyJu0nZn4l1JC3gCP_KLmc9mMXKAHkr8";
+  const embedUrl = "https://drive.google.com/file/d/1pyJu0nZn4l1JC3gCP_KLmc9mMXKAHkr8/preview";
 
   return (
     <AnimatePresence>
